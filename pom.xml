@@ -62,6 +62,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- dependencies for the hibernate stuff -->
 
         <dependency>
             <groupId>org.hibernate</groupId>
