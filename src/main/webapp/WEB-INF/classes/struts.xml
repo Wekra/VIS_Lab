@@ -19,13 +19,13 @@
         <!-- Add your actions here  -->
 
         <action name="User_forward">
-            <result>/WEB-INF/example/Login.jsp</result>
+            <result>/WEB-INF/pages/Login.jsp</result>
         </action>
 
         <action name="User_login" class="vislabExample.controller.action.LoginAction">
-            <result name="success">/WEB-INF/example/welcome.jsp</result>
-            <result name="input">/WEB-INF/example/Login.jsp</result>
-            <result name="registrieren">/WEB-INF/example/registration.jsp</result>
+            <result name="success">/WEB-INF/pages/welcome.jsp</result>
+            <result name="input">/WEB-INF/pages/Login.jsp</result>
+            <result name="registrieren">/WEB-INF/pages/registration.jsp</result>
         </action>
     </package>
 
