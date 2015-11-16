@@ -1,18 +1,38 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<html>
+<%--
+  Created by IntelliJ IDEA.
+  User: Christian
+  Date: 16.11.2015
+  Time: 12:12
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="s" uri="/struts-tags"  %>
+
+<html >
 <head>
-    <title>Welcome</title>
-    <link href="<s:url value="/css/examplecss"/>" rel="stylesheet"
-          type="text/css"/>
+    <title ><s:text name="welcome.title"/></title>
 </head>
 
-<body>
-<h3>Commands</h3>
-<ul>
-    <li><a href="<s:url action="Login_input"/>">Sign On</a></li>
-    <li><a href="<s:url action="Register"/>">Register</a></li>
-</ul>
+<body bgcolor="white">
+
+<font color="red">
+    <s:actionmessage />
+</font>
+
+<p><s:text name="welcome.message"/></p>
+
+<p><s:text name="welcome.address"/>
+    <s:property value="firstname"/>
+    <s:property value="lastname" />
+</p>
+
+<p><s:text name="welcome.success"/> </p>
+
+<font color="red">
+    <s:actionerror label="label" />
+</font>
+
 
 </body>
 </html>
