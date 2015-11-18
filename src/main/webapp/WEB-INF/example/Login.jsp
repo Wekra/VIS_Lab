@@ -6,10 +6,19 @@
 </head>
 
 <body>
-<s:form action="Login">
-    <s:textfield key="username"/>
-    <s:password key="password" />
-    <s:submit/>
+<s:form action="User_Login" focusElement="username">
+    <s:textfield name="username" key="username"/>
+    <s:password name="password" key="password" />
+
+    <s:textfield name="username" key="prompt.username" size="20"/>
+    <s:password name="password" key="prompt.password" size="20"/>
+
+    <s:submit method="execute" label="Login" align="center"/>
 </s:form>
+
+
+<font color="red">
+    <s:actionerror label="label"/>
+</font>
 </body>
 </html>
