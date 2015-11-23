@@ -4,6 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <h1><s:text name="greeting" /></h1>
     <title>Hello World!</title>
 </head>
 

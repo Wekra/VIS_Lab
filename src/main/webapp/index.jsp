@@ -17,13 +17,22 @@
 </s:url>
 <p><a href="${helloLink}">Hello Bruce Phillips</a> </p>
 
-<p><a href="/register.jsp">Please register</a> for our prize drawing.</p>
-
 <p>Get your own personal hello by filling out and submitting this form.</p>
 <s:form action="hello">
     <s:textfield name="userName" label="Your Name" />
     <s:submit value="Submit" />
 </s:form>
 
+<s:url action="registerInput" var="registerInputLink" />
+<p><a href="${registerInputLink}">Please register</a> for our prize drawing.</p>
+
+<h3>Auf Deutsch registrieren</h3>
+<s:url action="registerInput" var="registerInputLinkDE">
+    <s:param name="request_locale">de</s:param>
+</s:url>
+<p><a href="${registerInputLinkDE}">Bitte registrieren Sie sich hier</a>, um an unserem Gewinnspiel teilzunehmen.</p>
+
+<hr />
+<s:text name="contact" />
 </body>
 </html>
