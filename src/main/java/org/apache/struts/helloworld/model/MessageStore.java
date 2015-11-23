@@ -16,4 +16,8 @@ public class MessageStore {
     public String getMessage() {
         return message;
     }
+
+    public String toString() {
+        return message + " (from toString)";
+    }
 }

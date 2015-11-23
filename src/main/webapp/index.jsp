@@ -11,5 +11,19 @@
 <body>
 <h1>Welcome to Struts 2!</h1>
 <p><a href="<s:url action='hello'/>">Hello World</a></p>
+<!--Using struts 2 tags -->
+<s:url action="hello" var="helloLink">
+    <s:param name="userName">Bruce Phillips</s:param>
+</s:url>
+<p><a href="${helloLink}">Hello Bruce Phillips</a> </p>
+
+<p><a href="/register.jsp">Please register</a> for our prize drawing.</p>
+
+<p>Get your own personal hello by filling out and submitting this form.</p>
+<s:form action="hello">
+    <s:textfield name="userName" label="Your Name" />
+    <s:submit value="Submit" />
+</s:form>
+
 </body>
 </html>
