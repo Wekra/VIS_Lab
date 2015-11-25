@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package de.hska.vis.example;
+package de.hska.vis.webshop;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.config.entities.ActionConfig;
@@ -29,9 +29,9 @@ import java.util.Map;
 public class LoginTest extends ConfigTest {
 
     public void FIXME_testLoginConfig() throws Exception {
-        ActionConfig config = assertClass("example", "Login_input", "example.Login");
+        ActionConfig config = assertClass("webshop", "Login_input", "webshop.Login");
         assertResult(config, ActionSupport.SUCCESS, "Menu");
-        assertResult(config, ActionSupport.INPUT, "/example/Login.jsp");
+        assertResult(config, ActionSupport.INPUT, "/webshop/Login.jsp");
     }
 
     public void testLoginSubmit() throws Exception {

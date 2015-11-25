@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package de.hska.vis.example;
+package de.hska.vis.webshop;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.config.RuntimeConfiguration;

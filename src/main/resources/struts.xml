@@ -5,8 +5,28 @@
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="global"/>
 
-    <include file="example.xml"/>
+    <package name="webshop" namespace="/webshop" extends="struts-default">
+
+        <default-action-ref name="HelloWorld" />
+
+        <action name="Homepage" class="de.hska.vis.webshop.HelloWorld">
+            <result>/WEB-INF/pages/Homepage.jsp</result>
+        </action>
+
+        <action name="Login_*" method="{1}" class="de.hska.vis.webshop.Login">
+            <result name="input">/WEB-INF/pages/Login.jsp</result>
+            <result type="redirectAction">Menu</result>
+        </action>
+
+        <action name="*" class="de.hska.vis.webshop.ExampleSupport">
+            <result>/WEB-INF/example/{1}.jsp</result>
+        </action>
+
+        <!-- Add additional "webshop" package actions here. -->
+
+    </package>
 
     <package name="default" namespace="/" extends="struts-default">
 
@@ -14,9 +34,13 @@
 
         <action name="index">
             <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
+                <param name="actionName">Homepage</param>
+                <param name="namespace">/webshop</param>
             </result>
+        </action>
+
+        <action name="Signup" class="de.hska.vis.webshop.Signup">
+            <result>/WEB-INF/pages/Signup.jsp</result>
         </action>
 
     </package>
