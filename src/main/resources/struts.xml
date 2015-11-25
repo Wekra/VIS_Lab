@@ -26,6 +26,15 @@
             <result name="input">/register.jsp</result>
         </action>
 
+        <action name="edit" class="org.apache.struts.edit.action.EditAction" method="input">
+            <result name="input">/edit.jsp</result>
+        </action>
+
+        <action name="save" class="org.apache.struts.edit.action.EditAction" method="execute">
+            <result name="input">/edit.jsp</result>
+            <result name="success">/thankyou.jsp</result>
+        </action>
+
     </package>
 
 </struts>
