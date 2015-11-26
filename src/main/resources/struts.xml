@@ -11,20 +11,29 @@
 
         <default-action-ref name="HelloWorld" />
 
-        <action name="Homepage" class="de.hska.vis.webshop.HelloWorld">
+        <action name="Homepage" class="de.hska.vis.webshop.action.HelloWorld">
             <result>/WEB-INF/pages/Homepage.jsp</result>
         </action>
 
-        <action name="Login_*" method="{1}" class="de.hska.vis.webshop.Login">
+        <action name="Login_*" method="{1}" class="de.hska.vis.webshop.action.Login">
             <result name="input">/WEB-INF/pages/Login.jsp</result>
             <result type="redirectAction">Menu</result>
         </action>
 
-        <action name="*" class="de.hska.vis.webshop.ExampleSupport">
-            <result>/WEB-INF/example/{1}.jsp</result>
+        <action name="LoginSubmit" method="execute" class="de.hska.vis.webshop.action.Login">
+            <result name="success">/WEB-INF/pages/Menu.jsp</result>
+            <result name="input">/WEB-INF/pages/Login.jsp</result>
+        </action>
+        <!-- Add additional "webshop" package actions here. -->
+
+        <action name="Signup_input" class="de.hska.vis.webshop.action.SignupInput">
+            <result name="success">/WEB-INF/pages/Signup.jsp</result>
         </action>
 
-        <!-- Add additional "webshop" package actions here. -->
+        <action name="SignupSubmit" class="de.hska.vis.webshop.action.Signup" method="execute">
+            <result name="success">/WEB-INF/pages/Menu.jsp</result>
+            <result name="input">/WEB-INF/pages/Signup.jsp</result>
+        </action>
 
     </package>
 
@@ -37,10 +46,6 @@
                 <param name="actionName">Homepage</param>
                 <param name="namespace">/webshop</param>
             </result>
-        </action>
-
-        <action name="Signup" class="de.hska.vis.webshop.Signup">
-            <result>/WEB-INF/pages/Signup.jsp</result>
         </action>
 
     </package>

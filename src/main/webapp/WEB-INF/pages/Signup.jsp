@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Christian
@@ -11,12 +12,21 @@
     <title>Sign-up to MILKROAD</title>
 </head>
 <body>
-    <p>This site is under construction and will be used to sign-up to MILKROAD.</p>
+    <h2>Sign up to MILKROAD</h2>
     <p>-mmmh milky</p>
-<p/>
-<p/>
-<p/>
-<p/>
+    <p>Please provide the following details about yourself.</p>
+    <s:form action="SignupSubmit">
+        <s:textfield key="firstname" name="userBean.firstname"/>
+        <s:textfield key="lastname" name="userBean.lastname"/>
+        <s:textfield key="email" name="userBean.email"/>
+        <s:textfield key="street" name="userBean.street" />
+        <s:textfield key="number" name="userBean.number" />
+        <s:textfield key="zip" name="userBean.zip" />
+        <s:textfield key="city" name="userBean.city" />
+        <s:textfield key="country" name="userBean.country" />
+        <s:password key="password" name="userBean.password" />
+        <s:submit/>
+    </s:form>
     <hr />
     <s:text name="contact" />
 </body>

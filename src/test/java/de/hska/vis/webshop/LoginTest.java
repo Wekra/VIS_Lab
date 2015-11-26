@@ -23,6 +23,7 @@ package de.hska.vis.webshop;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.config.entities.ActionConfig;
+import de.hska.vis.webshop.action.Login;
 
 import java.util.Map;
 

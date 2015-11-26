@@ -19,9 +19,9 @@
 
 <body>
 <h1>Welcome to MILKROAD</h1>
-<h2>This is our homepage. It is the milkiest homepage you'll find on the interwebz. </h2>
+<h2>This is our webshop. It is the milkiest webshop you'll find on the interwebz. </h2>
 <h3>It's very good.</h3>
-<p>If you want to visit our shop, please <a href="<s:url action="Login_input"/>">Log-in</a> or <a href="<s:url action="Signup"/>">Sign-up</a>.</p>
+<p>If you want to visit our shop, please <a href="<s:url action="Login_input"/>">Log-in</a> or <a href="<s:url action="Signup_input"/>">Sign-up</a>.</p>
 <!--
 <ul>
     <li><a href="<s:url action="Login_input"/>">Sign On</a></li>

@@ -19,15 +19,15 @@
  * under the License.
  */
 
-package de.hska.vis.webshop;
+package de.hska.vis.webshop.action;
 
 public class Login extends ExampleSupport {
 
     public String execute() throws Exception {
 
-        if (isInvalid(getUsername())) return INPUT;
-
-        if (isInvalid(getPassword())) return INPUT;
+//        if (isInvalid(getUsername())) return INPUT;
+//
+//        if (isInvalid(getPassword())) return INPUT;
 
         return SUCCESS;
     }

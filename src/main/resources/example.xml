@@ -11,16 +11,16 @@
 
         <default-action-ref name="HelloWorld" />
 
-        <action name="HelloWorld" class="de.hska.vis.webshop.HelloWorld">
+        <action name="HelloWorld" class="de.hska.vis.webshop.action.HelloWorld">
             <result>/WEB-INF/pages/Test.jsp</result>
         </action>
 
-        <action name="Login_*" method="{1}" class="de.hska.vis.webshop.Login">
+        <action name="Login_*" method="{1}" class="de.hska.vis.webshop.action.Login">
             <result name="input">/WEB-INF/example/Login.jsp</result>
             <result type="redirectAction">Menu</result>
         </action>
 
-        <action name="*" class="de.hska.vis.webshop.ExampleSupport">
+        <action name="*" class="de.hska.vis.webshop.action.ExampleSupport">
             <result>/WEB-INF/example/{1}.jsp</result>
         </action>
 

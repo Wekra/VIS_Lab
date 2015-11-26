@@ -6,8 +6,8 @@
 </head>
 
 <body>
-<s:form action="Login">
-    <s:textfield key="username"/>
+<s:form action="LoginSubmit">
+    <s:textfield key="email"/>
     <s:password key="password" />
     <s:submit/>
 </s:form>

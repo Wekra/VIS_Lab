@@ -22,6 +22,7 @@
 package de.hska.vis.webshop;
 
 import com.opensymphony.xwork2.ActionSupport;
+import de.hska.vis.webshop.action.HelloWorld;
 import org.apache.struts2.StrutsTestCase;
 
 public class HelloWorldTest extends StrutsTestCase {
