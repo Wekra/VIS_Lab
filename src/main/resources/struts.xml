@@ -21,7 +21,11 @@
 
         <action name="Login_*" method="{1}" class="de.hska.vis.webshop.action.Login">
             <result name="input">/WEB-INF/pages/Login.jsp</result>
-            <result type="redirectAction">Menu</result>
+            <result type="redirectAction">Homepage</result>
+        </action>
+
+        <action name="Access_menu" class="de.hska.vis.webshop.action.ExampleSupport">
+            <result name="success">/WEB-INF/pages/Menu.jsp</result>
         </action>
 
         <action name="LoginSubmit" method="execute" class="de.hska.vis.webshop.action.Login">
@@ -35,7 +39,7 @@
         </action>
 
         <action name="SignupSubmit" class="de.hska.vis.webshop.action.Signup" method="execute">
-            <result name="success">/WEB-INF/pages/Menu.jsp</result>
+            <result name="success">/WEB-INF/pages/Registration_successfull.jsp</result>
             <result name="input">/WEB-INF/pages/Signup.jsp</result>
         </action>
 

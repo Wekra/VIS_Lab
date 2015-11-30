@@ -20,17 +20,17 @@ public class User implements Serializable {
     private String city;
     private String country;
     private boolean isAdmin;
-    private long u_id;
+    private long user_id;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="U_ID", nullable = false)
-    public long getU_id() {
-        return u_id;
+    public long getUser_id() {
+        return user_id;
     }
 
-    public void setU_id(long u_id) {
-        this.u_id = u_id;
+    public void setUser_id(long u_id) {
+        this.user_id = u_id;
     }
 
     @Column(name="PASSWORD", nullable = false)
@@ -126,7 +126,7 @@ public class User implements Serializable {
     public String toString(){
         return "Vorname: " + getFirstname() + " Nachname: " + getLastname() + " Email: " + getEmail() + " Straße: " + getStreet()
                 + " Hausnummer: " + getNumber() + " PLZ: " + getZip() +  " Ort: " + getCity() + " Land: " + getCountry()
-                + " UID: " + getU_id();
+                + " UID: " + getUser_id();
     }
 
 

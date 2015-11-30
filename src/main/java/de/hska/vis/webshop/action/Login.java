@@ -21,13 +21,25 @@
 
 package de.hska.vis.webshop.action;
 
+import de.hska.vis.webshop.helper.HibernateUtil;
+import de.hska.vis.webshop.model.User;
+import org.hibernate.Query;
+import org.hibernate.Session;
+
+import java.util.Iterator;
+import java.util.List;
+
 public class Login extends ExampleSupport {
+
 
     public String execute() throws Exception {
 
-//        if (isInvalid(getUsername())) return INPUT;
-//
-//        if (isInvalid(getPassword())) return INPUT;
+        User user = null;
+        user = getUserByEmail(getEmail());
+        if (user == null) return INPUT;
+
+        if(!isPasswordValid(user)) return INPUT;
+
 
         return SUCCESS;
     }
@@ -36,14 +48,13 @@ public class Login extends ExampleSupport {
         return (value == null || value.length() == 0);
     }
 
-    private String username;
-
-    public String getUsername() {
-        return username;
+    private String email;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     private String password;
@@ -55,5 +66,27 @@ public class Login extends ExampleSupport {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    private boolean isPasswordValid(User user){
+       return user.getPassword().equals(getPassword());
+    }
+
+    private User getUserByEmail(String email){
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        session.beginTransaction();
+        String sql = "from User as u where u.email=:mail";
+        Query query = session.createQuery(sql);
+        query.setParameter("mail", email);
+        List<User> list = query.list();
+        if (list.size() > 0 ){
+            session.close();
+            return list.get(0);
+        }
+        session.close();
+        return null;
+    }
+
+
 
 }

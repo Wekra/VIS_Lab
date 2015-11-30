@@ -10,28 +10,32 @@ import java.io.Serializable;
 @Table(name = "shopping_cart", schema = "vislab")
 public class ShoppingCart implements Serializable {
     private int count;
-    private long pId;
-    private long uId;
+    private long product_id;
+    private long user_id;
 
     @Id
-    @Column(name = "U_ID", nullable = false)
-    public long getuId() {
-        return uId;
+    @Column(name="U_ID")
+    @JoinColumn(name="U_ID")
+    public long getUser_id() {
+        return user_id;
     }
 
-    public void setuId(long uId) {
-        this.uId = uId;
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
     }
 
-    @Column(name = "P_ID", nullable = false)
     @Id
-    public long getpId() {
-        return pId;
+    @Column(name="P_ID")
+    @JoinColumn(name="P_ID")
+    public long getProduct_id() {
+        return product_id;
     }
 
-    public void setpId(long pId) {
-        this.pId = pId;
+    public void setProduct_id(long product_id) {
+        this.product_id = product_id;
     }
+
+
 
     @Basic
     @Column(name = "COUNT")

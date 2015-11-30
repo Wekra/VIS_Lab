@@ -1,9 +1,6 @@
 package de.hska.vis.webshop.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Arrays;
 
 /**
@@ -11,21 +8,32 @@ import java.util.Arrays;
  */
 @Entity
 public class Product {
-    private long pId;
+    private long product_id;
     private String label;
     private String description;
     private double price;
     private byte[] image;
     private int stock;
+    private long category_id;
+
+    @Column(name = "C_ID")
+    @JoinColumn(name = "C_ID")
+    public long getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(long category_id) {
+        this.category_id = category_id;
+    }
 
     @Id
     @Column(name = "P_ID")
-    public long getpId() {
-        return pId;
+    public long getpProduct_id() {
+        return product_id;
     }
 
-    public void setpId(long pId) {
-        this.pId = pId;
+    public void setpProduct_id(long pId) {
+        this.product_id = pId;
     }
 
     @Basic
@@ -85,7 +93,7 @@ public class Product {
 
         Product product = (Product) o;
 
-        if (pId != product.pId) return false;
+        if (product_id != product.product_id) return false;
         if (Double.compare(product.price, price) != 0) return false;
         if (stock != product.stock) return false;
         if (label != null ? !label.equals(product.label) : product.label != null) return false;
@@ -99,7 +107,7 @@ public class Product {
     public int hashCode() {
         int result;
         long temp;
-        result = (int) (pId ^ (pId >>> 32));
+        result = (int) (product_id ^ (product_id >>> 32));
         result = 31 * result + (label != null ? label.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         temp = Double.doubleToLongBits(price);

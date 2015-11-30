@@ -10,18 +10,18 @@ import javax.persistence.Id;
  */
 @Entity
 public class Category {
-    private long cId;
+    private long category_id;
     private String label;
     private String description;
 
     @Id
     @Column(name = "C_ID")
-    public long getcId() {
-        return cId;
+    public long getcCategory_id() {
+        return category_id;
     }
 
-    public void setcId(long cId) {
-        this.cId = cId;
+    public void setcCategory_id(long cId) {
+        this.category_id = cId;
     }
 
     @Basic
@@ -51,7 +51,7 @@ public class Category {
 
         Category category = (Category) o;
 
-        if (cId != category.cId) return false;
+        if (category_id != category.category_id) return false;
         if (label != null ? !label.equals(category.label) : category.label != null) return false;
         if (description != null ? !description.equals(category.description) : category.description != null)
             return false;
@@ -61,7 +61,7 @@ public class Category {
 
     @Override
     public int hashCode() {
-        int result = (int) (cId ^ (cId >>> 32));
+        int result = (int) (category_id ^ (category_id >>> 32));
         result = 31 * result + (label != null ? label.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;

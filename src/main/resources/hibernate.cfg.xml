@@ -15,14 +15,13 @@
         <property name="hibernate.show_sql">true</property>
 
         <!-- DB schema will be updated if needed -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <!-- Mappings kommen NACH allen properties -->
         <mapping class="de.hska.vis.webshop.model.User" />
         <mapping class="de.hska.vis.webshop.model.ShoppingCart"/>
         <mapping class="de.hska.vis.webshop.model.Category"/>
         <mapping class="de.hska.vis.webshop.model.Product"/>
-        <mapping class="de.hska.vis.webshop.model.ProCat" />
 
     </session-factory>
 </hibernate-configuration>
