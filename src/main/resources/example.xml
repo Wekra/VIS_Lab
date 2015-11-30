@@ -16,12 +16,12 @@
         </action>
 
         <action name="Login_*" method="{1}" class="de.hska.vis.webshop.action.Login">
-            <result name="input">/WEB-INF/example/Login.jsp</result>
+            <result name="input">/WEB-INF/pages/Login.jsp</result>
             <result type="redirectAction">Menu</result>
         </action>
 
         <action name="*" class="de.hska.vis.webshop.action.ExampleSupport">
-            <result>/WEB-INF/example/{1}.jsp</result>
+            <result>/WEB-INF/pages/{1}.jsp</result>
         </action>
 
         <!-- Add additional "webshop" package actions here. -->

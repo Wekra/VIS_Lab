@@ -25,7 +25,7 @@ public class HibernateUtil {
         } catch (RuntimeException ex) {
             System.out.println(ex.getMessage());
         }*/
-       /* final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
                 .build();
         try {
@@ -35,8 +35,8 @@ public class HibernateUtil {
             // The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
             // so destroy it manually.
             StandardServiceRegistryBuilder.destroy(registry);
-        }*/
-        try {
+        }
+        /*try {
             // Create the SessionFactory from hibernate.cfg.xml
             Configuration configuration = new Configuration().configure();
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().
@@ -46,7 +46,7 @@ public class HibernateUtil {
         } catch (Throwable ex) {
             System.out.println("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
-        }
+        }*/
     }
 
     public static SessionFactory getSessionFactory(){

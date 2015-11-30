@@ -15,6 +15,10 @@
             <result>/WEB-INF/pages/Homepage.jsp</result>
         </action>
 
+        <action name="Welcome" class="de.hska.vis.webshop.action.ExampleSupport">
+            <result>/WEB-INF/pages/Homepage.jsp</result>
+        </action>
+
         <action name="Login_*" method="{1}" class="de.hska.vis.webshop.action.Login">
             <result name="input">/WEB-INF/pages/Login.jsp</result>
             <result type="redirectAction">Menu</result>

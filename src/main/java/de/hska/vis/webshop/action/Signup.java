@@ -25,9 +25,9 @@ public class Signup extends ActionSupport {
     private User userBean;
 
     public String execute() throws Exception {
-        User user = new User();
+       /* User user = new User();
         user.setFirstname(userBean.getFirstname());
-        user.setLastname(userBean.getLastname());
+        user.setLastname(userBean.getLastname());*/
 
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = null;
@@ -36,7 +36,7 @@ public class Signup extends ActionSupport {
         try {
             session = sf.getCurrentSession();
             transaction = session.beginTransaction();
-            session.save(user);
+            session.save(userBean);
             transaction.commit();
             return SUCCESS;
 

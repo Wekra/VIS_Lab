@@ -13,8 +13,16 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.show_sql">true</property>
-        <mapping class="de.hska.vis.webshop.model.User" />
+
         <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!-- Mappings kommen NACH allen properties -->
+        <mapping class="de.hska.vis.webshop.model.User" />
+        <mapping class="de.hska.vis.webshop.model.ShoppingCart"/>
+        <mapping class="de.hska.vis.webshop.model.Category"/>
+        <mapping class="de.hska.vis.webshop.model.Product"/>
+        <mapping class="de.hska.vis.webshop.model.ProCat" />
+
     </session-factory>
 </hibernate-configuration>
