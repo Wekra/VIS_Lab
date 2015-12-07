@@ -24,12 +24,12 @@
             <result type="redirectAction">Homepage</result>
         </action>
 
-        <action name="Access_menu" class="de.hska.vis.webshop.action.ExampleSupport">
-            <result name="success">/WEB-INF/pages/Menu.jsp</result>
+        <action name="Access_menu" method="execute" class="de.hska.vis.webshop.action.ExampleSupport">
+            <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
         </action>
 
         <action name="LoginSubmit" method="execute" class="de.hska.vis.webshop.action.Login">
-            <result name="success">/WEB-INF/pages/Menu.jsp</result>
+            <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
             <result name="input">/WEB-INF/pages/Login.jsp</result>
         </action>
         <!-- Add additional "webshop" package actions here. -->
@@ -43,7 +43,7 @@
             <result name="input">/WEB-INF/pages/Signup.jsp</result>
         </action>
 
-        <action name="GoTo_add_product" class="de.hska.vis.webshop.action.ExampleSupport">
+        <action name="GoTo_add_product" class="de.hska.vis.webshop.action.GoTo_Add_Product">
             <result name="success">/WEB-INF/pages/Add_product.jsp</result>
         </action>
 
@@ -51,6 +51,23 @@
             <interceptor-ref name="defaultStack"></interceptor-ref>
             <result name="success">/WEB-INF/pages/Add_product_successfull.jsp</result>
             <result name="input">/WEB-INF/pages/Add_product.jsp</result>
+        </action>
+
+        <action name="GoTo_Admin_Main" class="de.hska.vis.webshop.action.GoTo_Admin_Main">
+            <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
+        </action>
+        
+        <action name="GoTo_Detail_Product" class="de.hska.vis.webshop.action.GoTo_Detail_Product">
+            <result name="success">/WEB-INF/pages/Detail_Product.jsp</result>
+        </action>
+        
+        <action name="GoTo_Add_Category" class="de.hska.vis.webshop.action.GoTo_Add_Category">
+            <result name="success">/WEB-INF/pages/Add_Category.jsp</result>
+        </action>
+
+        <action name="Add_Category" class="de.hska.vis.webshop.action.Add_Category">
+            <result name="success">/WEB-INF/pages/Add_Category_Successfull.jsp</result>
+            <result name="input">/WEB-INF/pages/Add_Category.jsp</result>
         </action>
 
     </package>

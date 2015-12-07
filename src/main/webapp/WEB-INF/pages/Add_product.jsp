@@ -15,7 +15,8 @@
     <h2>Please fill in</h2>
     <s:form action="Add_product" enctype="multipart/form-data">
         <s:textfield label="label" name="productBean.label"/>
-        <s:textfield label="description" name="productBean.description"/>
+        <s:textarea label="description" name="productBean.description"/>
+        <s:select label="Kategory" list="categoryLabelList"/>
         <s:textfield label="price" name="productBean.price"/>
         <s:textfield label="stock" name="productBean.stock" />
         <s:submit/>

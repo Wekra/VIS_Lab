@@ -21,15 +21,15 @@
 
 package de.hska.vis.webshop.action;
 
+import com.opensymphony.xwork2.ActionSupport;
 import de.hska.vis.webshop.helper.HibernateUtil;
 import de.hska.vis.webshop.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import java.util.Iterator;
 import java.util.List;
 
-public class Login extends ExampleSupport {
+public class Login extends ActionSupport {
 
 
     public String execute() throws Exception {
@@ -39,7 +39,6 @@ public class Login extends ExampleSupport {
         if (user == null) return INPUT;
 
         if(!isPasswordValid(user)) return INPUT;
-
 
         return SUCCESS;
     }

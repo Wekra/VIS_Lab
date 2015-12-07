@@ -18,6 +18,6 @@
 <p>Preis: <s:property value="productBean.price"/></p>
 <p>Auf Lager: <s:property value="productBean.stock"/></p>
 
-<p><a href="<s:url action="Access_menu"/>">Zum Hauptmenü</a>. </p>
+<p><a href="<s:url action="GoTo_Admin_Main"/>">Zum Hauptmenü</a>. </p>
 </body>
 </html>
