@@ -49,6 +49,7 @@ public class Login extends ExampleSupport {
     }
 
     private String email;
+
     public String getEmail() {
         return email;
     }

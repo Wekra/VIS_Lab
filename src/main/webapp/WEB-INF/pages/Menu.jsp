@@ -12,6 +12,8 @@
 <h3>Shop-stub</h3>
 
 <p>Some paragraph.</p>
+<p>Neues Produkt <a href="<s:url action="GoTo_add_product"/>">hinzufügen</a>. </p>
+
 
 </body>
 </html>

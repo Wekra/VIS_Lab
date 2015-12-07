@@ -43,6 +43,16 @@
             <result name="input">/WEB-INF/pages/Signup.jsp</result>
         </action>
 
+        <action name="GoTo_add_product" class="de.hska.vis.webshop.action.ExampleSupport">
+            <result name="success">/WEB-INF/pages/Add_product.jsp</result>
+        </action>
+
+        <action name="Add_product" class="de.hska.vis.webshop.action.Add_Product" method="execute">
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="success">/WEB-INF/pages/Add_product_successfull.jsp</result>
+            <result name="input">/WEB-INF/pages/Add_product.jsp</result>
+        </action>
+
     </package>
 
     <package name="default" namespace="/" extends="struts-default">
