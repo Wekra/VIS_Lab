@@ -87,7 +87,8 @@ public class Signup extends ActionSupport {
             addFieldError("userBean.getCity","City is Required");
         }
 
-        if(userBean.getCountry() != null){
+
+        if(userBean.getCountry().length() == 0){
             addFieldError("userBean.getCountry","Country is Required");
         }
 
@@ -110,5 +111,6 @@ public class Signup extends ActionSupport {
         if(userBean.getZip() != null){
             addFieldError("userBean.getZip","Zip is Required");
         }
+
     }
 }

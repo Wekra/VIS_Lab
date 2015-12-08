@@ -87,6 +87,16 @@ public class Login extends ExampleSupport {
         return null;
     }
 
+    public void validate(){
+        if(getEmail().length() == 0){
+            addFieldError("email", "This field must not be empty!");
+        }
+
+        if(getPassword().length() == 0){
+            addFieldError("password", "This field must not be empty!");
+        }
+    }
+
 
 
 }

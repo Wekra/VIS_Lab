@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>Sign On</title>
+    <link href="../css/webshop.css" rel="stylesheet" type="text/css">
+    <s:head />
 </head>
 
 <body>
