@@ -7,7 +7,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-
 import java.util.List;
 
 /**
@@ -47,7 +46,6 @@ public class Signup extends ActionSupport {
             System.out.println(e.getMessage());
             return INPUT;
         }
-
     }
 
     /**
@@ -57,14 +55,14 @@ public class Signup extends ActionSupport {
     public void validate(){
         // validate Password
         if(userBean.getPassword().length() == 0) {
-            addFieldError("userBean.getPassword", "Password is Required");
+            addFieldError("userBean.password", "Password is Required");
         }else if(userBean.getPassword().length() < 8) {
-            addFieldError("userBean.getPassword", "Password has to be at least eight characters long");
+            addFieldError("userBean.password", "Password has to be at least eight characters long");
         }
 
         // validate Email (Username)
         if(userBean.getEmail().length() == 0){
-            addFieldError("userBean.getEmail","Email is Required");
+            addFieldError("userBean.email","Email is Required");
         }else {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
@@ -78,39 +76,38 @@ public class Signup extends ActionSupport {
             session.close();
 
             if (list.size() > 0) {
-                addFieldError("userBean.getEmail", "E-mail address already exists");
+                addFieldError("userBean.email", "E-mail address already exists");
             }
         }
 
         // validate others
         if(userBean.getCity().length() == 0){
-            addFieldError("userBean.getCity","City is Required");
+            addFieldError("userBean.city","City is Required");
         }
 
 
         if(userBean.getCountry().length() == 0){
-            addFieldError("userBean.getCountry","Country is Required");
+            addFieldError("userBean.country","Country is Required");
         }
 
         if(userBean.getFirstname().length() == 0){
-            addFieldError("userBean.getFirstname","Firstname is Required");
+            addFieldError("userBean.firstname","Firstname is Required");
         }
 
         if(userBean.getLastname().length() == 0){
-            addFieldError("userBean.getLastname","Lastname is Required");
+            addFieldError("userBean.lastname","Lastname is Required");
         }
 
         if(userBean.getNumber().length() == 0){
-            addFieldError("userBean.getNumber","Number is Required");
+            addFieldError("userBean.number","Number is Required");
         }
 
         if(userBean.getStreet().length() == 0){
-            addFieldError("userBean.getStreet","Street is Required");
+            addFieldError("userBean.street","Street is Required");
         }
 
         if(userBean.getZip().length() == 0){
-            addFieldError("userBean.getZip","Zip is Required");
+            addFieldError("userBean.zip","Zip is Required");
         }
-
     }
 }

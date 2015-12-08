@@ -3,15 +3,25 @@
 <html>
 <head>
     <title>Sign On</title>
-    <link href="../css/webshop.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <s:head />
 </head>
 
 <body>
-<s:form action="LoginSubmit">
-    <s:textfield key="email"/>
-    <s:password key="password" />
-    <s:submit/>
-</s:form>
+<div class="container">
+    <h2>Please provide your login-data below.</h2>
+        <s:form action="LoginSubmit">
+            <s:textfield cssClass="myClass" key="email"/>
+            <s:password cssClass="myClass" key="password" />
+            <s:submit/>
+        </s:form>
+</div>
+
+<div class="contact">
+    <hr />
+    <s:text name="contact" />
+</div>
+
 </body>
 </html>
