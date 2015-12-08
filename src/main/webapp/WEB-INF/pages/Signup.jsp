@@ -10,6 +10,9 @@
 <html>
 <head>
     <title>Sign-up to MILKROAD</title>
+    <!--link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css"-->
     <s:head />
 </head>
 <body>

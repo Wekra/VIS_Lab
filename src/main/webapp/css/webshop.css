@@ -1,11 +1,36 @@
 body {
-    background: url("http://www.alnatura.de/~/media/Images/Content/Kochen%20und%20Geniessen/Warenkunde/Milch.jpg") no-repeat fixed center center;
+    background-image:url("http://www.alnatura.de/~/media/Images/Content/Kochen%20und%20Geniessen/Warenkunde/Milch.jpg");
     background-size: cover;
-    background-color: white;
-    background-blend-mode: multiply;
-
 }
 
-h1{
-    background: #d1d1d1
+h1 {
+    font-size: 48px;
+    font-family: 'Shift', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Shift', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h3{
+    font-family:'Shift', sans-serif;
+    color: #393c3d;
+    font-size: 24px;
+}
+
+.container {
+    position: relative;
+    top: 100px;
+}
+
+.contact {
+    position: fixed;
+    bottom: 1px;
+}
+
+.myClass {
+    color: black;
 }
