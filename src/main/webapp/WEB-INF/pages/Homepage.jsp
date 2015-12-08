@@ -15,7 +15,6 @@
     <title>Welcome to MILKROAD</title>
     <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
 </head>
 
 <body>
@@ -23,15 +22,12 @@
         <h1>Welcome to the MILKROAD</h1>
         <h2>This is our webshop. It is the milkiest webshop you'll find on the interwebz. </h2>
         <h3>If you want to visit our shop, please <a href="<s:url action="Login_input"/>">Log-in</a> or <a href="<s:url action="Signup_input"/>">Sign-up</a>.</h3>
-    <div class="contact">
-        <hr />
-        <s:text name="contact" />
-    </div>
-
 </div>
 
-
-
+<div class="contact">
+    <hr />
+    <s:text name="contact" />
+</div>
 
 </body>
 </html>

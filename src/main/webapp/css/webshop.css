@@ -7,6 +7,7 @@ h1 {
     font-size: 48px;
     font-family: 'Shift', sans-serif;
     font-weight: bold;
+
 }
 
 h2 {
@@ -24,13 +25,44 @@ h3{
 .container {
     position: relative;
     top: 100px;
+    left: 100px;
 }
 
 .contact {
-    position: fixed;
-    bottom: 1px;
+    position:absolute;
+    bottom: 5px;
+    width:100%;
 }
 
 .myClass {
+    color: black;
+    font-weight: bold;
+}
+
+label[for="labelFirstname"] {
+    color: black;
+}
+label[for="labelLastname"] {
+    color: black;
+}
+label[for="labelEmail"] {
+    color: black;
+}
+label[for="labelStreet"] {
+    color: black;
+}
+label[for="labelNumber"] {
+    color: black;
+}
+label[for="labelZip"] {
+    color: black;
+}
+label[for="labelCity"] {
+    color: black;
+}
+label[for="labelCountry"] {
+    color: black;
+}
+label[for="labelPassword"] {
     color: black;
 }

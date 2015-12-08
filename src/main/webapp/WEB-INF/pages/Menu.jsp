@@ -9,12 +9,18 @@
     <title>MILKROAD</title>
     <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
 </head>
 <body>
-<h3>Shop-stub</h3>
 
-<p>Some paragraph.</p>
+<div class="container">
+    <h3>Shop-stub</h3>
+    <p>Some paragraph.</p>
+</div>
+
+<div class="contact">
+    <hr />
+    <s:text name="contact" />
+</div>
 
 </body>
 </html>
