@@ -1,0 +1,11 @@
+body {
+    background: url("http://www.alnatura.de/~/media/Images/Content/Kochen%20und%20Geniessen/Warenkunde/Milch.jpg") no-repeat fixed center center;
+    background-size: cover;
+    background-color: white;
+    background-blend-mode: multiply;
+
+}
+
+h1{
+    background: #d1d1d1
+}

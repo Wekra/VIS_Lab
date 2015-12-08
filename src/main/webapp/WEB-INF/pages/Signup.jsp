@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Sign-up to MILKROAD</title>
+    <s:head />
 </head>
 <body>
     <h2>Sign up to MILKROAD</h2>

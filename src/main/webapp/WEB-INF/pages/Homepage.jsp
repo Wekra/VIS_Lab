@@ -13,8 +13,7 @@
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Welcome to MILKROAD</title>
-    <link href="<s:url value="/css/examplecss"/>" rel="stylesheet"
-          type="text/css"/>
+    <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>

@@ -55,7 +55,9 @@ public class Signup extends ActionSupport {
      */
     @Override
     public void validate(){
-
+        if(userBean.getCity().length() == 0){
+            addFieldError("userBean.city","City is Required");
+        }
         checkNullInput();
 
         checkPassword();
@@ -107,11 +109,9 @@ public class Signup extends ActionSupport {
      */
     private void checkNullInput(){
 
-        if(userBean.getCity() != null){
-            addFieldError("userBean.getCity","City is Required");
-        }
 
-        if(userBean.getCountry() != null){
+
+        if(userBean.getCountry().length() == 0){
             addFieldError("userBean.getCountry","Country is Required");
         }
 
