@@ -55,24 +55,17 @@ public class Signup extends ActionSupport {
      */
     @Override
     public void validate(){
+        // validate Password
+        if(userBean.getPassword() == null) {
+            addFieldError("userBean.getPassword", "Password is Required");
+        }else if(userBean.getPassword().length() < 8) {
+            addFieldError("userBean.getPassword", "Password has to be at least eight characters long");
+        }
 
-        checkNullInput();
-
-        checkPassword();
-
-        checkEmail();
-
-    }
-
-    /**
-     * Checks if the E-mail field is empty or if the email is already given to another Account.
-     */
-    private void checkEmail(){
-
+        // validate Email (Username)
         if(userBean.getEmail() != null){
             addFieldError("userBean.getEmail","Email is Required");
         }else {
-
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
             session.beginTransaction();
@@ -88,25 +81,8 @@ public class Signup extends ActionSupport {
                 addFieldError("userBean.getEmail", "E-mail address already exists");
             }
         }
-    }
 
-    /**
-     * Checks if the Password is empty or shorter than eight characters.
-     */
-    private void checkPassword(){
-
-        if(userBean.getPassword() == null) {
-            addFieldError("userBean.getPassword", "Password is Required");
-        }else if(userBean.getPassword().length() < 8) {
-            addFieldError("userBean.getPassword", "Password has to be at least eight characters long");
-        }
-    }
-
-    /**
-     * checks if fields but the password and email are empty.
-     */
-    private void checkNullInput(){
-
+        // validate others
         if(userBean.getCity() != null){
             addFieldError("userBean.getCity","City is Required");
         }
@@ -134,6 +110,5 @@ public class Signup extends ActionSupport {
         if(userBean.getZip() != null){
             addFieldError("userBean.getZip","Zip is Required");
         }
-
     }
 }
