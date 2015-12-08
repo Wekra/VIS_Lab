@@ -15,6 +15,7 @@
 <h2>Das Produkt wurde erfolgreich hinzugefügt</h2>
 <p>Name: <s:property value="productBean.label"/></p>
 <p>Beschreibung: <s:property value="productBean.description"/></p>
+<p>Kategory: <s:property value="productBean.category"/></p>
 <p>Preis: <s:property value="productBean.price"/></p>
 <p>Auf Lager: <s:property value="productBean.stock"/></p>
 

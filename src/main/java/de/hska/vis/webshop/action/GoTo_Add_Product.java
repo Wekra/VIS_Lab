@@ -32,15 +32,22 @@ public class GoTo_Add_Product extends ActionSupport {
         {
             return INPUT;
         }
+
+        //create String Array with the labels of the categorys
         categoryLabelList = new String[helperList.size()];
         for(int i = 0; helperList.size() > i; i++)
         {
             categoryLabelList[i] = helperList.get(i).getLabel();
         }
 
+
         return SUCCESS;
     }
 
+    /**
+     * creates a list with all categorys in it
+     * @return null if the list is empty or the list
+     */
     private List<Category> createCategoryList()
     {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();

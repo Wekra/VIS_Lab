@@ -9,9 +9,9 @@ import org.hibernate.Session;
 import java.util.List;
 
 /**
- * Created by Marcel on 07.12.2015.
+ * Created by Marcel on 08.12.2015.
  */
-public class GoTo_Admin_Main extends ActionSupport {
+public class GoTo_Search extends ActionSupport{
 
     public void setProductList(List<Product> productList) {
         this.productList = productList;
@@ -28,7 +28,6 @@ public class GoTo_Admin_Main extends ActionSupport {
         productList = createProductList();
         return SUCCESS;
     }
-
     /**
      * creates a list with all products
      * @return null if no product exists or a list with all existing products
@@ -47,4 +46,5 @@ public class GoTo_Admin_Main extends ActionSupport {
         session.close();
         return null;
     }
+
 }

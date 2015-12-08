@@ -13,7 +13,7 @@
 </head>
 <body>
 <s:form action="Add_Category">
-    <s:textfield label="label" name="categoryBean.label"/>
+    <s:textfield key="categoryname" name="categoryBean.label"/>
     <s:submit/>
 </s:form>
 </body>

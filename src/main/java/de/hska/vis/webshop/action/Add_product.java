@@ -22,7 +22,7 @@ public class Add_Product extends ActionSupport {
 
     public String execute()
     {
-
+        //returns input if the category exists already
         Product product = null;
         product = getProductByLabel(productBean.getLabel());
         if (!(product == null)) return INPUT;
@@ -31,6 +31,7 @@ public class Add_Product extends ActionSupport {
         Session session = null;
         Transaction transaction = null;
 
+        //saves the category in database
         try {
             session = sf.getCurrentSession();
             transaction = session.beginTransaction();
@@ -45,6 +46,11 @@ public class Add_Product extends ActionSupport {
         }
     }
 
+    /**
+     * Gives the product with the choosen label
+     * @param label String productname
+     * @return null if product doesn't exist or the product
+     */
     private Product getProductByLabel(String label)
     {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();

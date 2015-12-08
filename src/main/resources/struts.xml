@@ -70,6 +70,14 @@
             <result name="input">/WEB-INF/pages/Add_Category.jsp</result>
         </action>
 
+        <action name="GoTo_Search" class="de.hska.vis.webshop.action.GoTo_Search">
+            <result name="success">/WEB-INF/pages/Search.jsp</result>
+        </action>
+
+        <action name="Search_Result" class="de.hska.vis.webshop.action.Search_Result">
+            <result name="success">/WEB-INF/pages/Search_Result.jsp</result>
+        </action>
+
     </package>
 
     <package name="default" namespace="/" extends="struts-default">

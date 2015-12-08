@@ -14,26 +14,26 @@ public class Product {
     private String description;
     private double price;
     private int stock;
-    private long category_id;
+    private String category;
 
 
-    @Column(name = "C_ID")
-    @JoinColumn(name = "C_ID")
-    public long getCategory_id() {
-        return category_id;
+    @Column(name = "CATEGORY")
+    @JoinColumn(name = "LABEL")
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategory_id(long category_id) {
-        this.category_id = category_id;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @Id
     @Column(name = "P_ID")
-    public long getpProduct_id() {
+    public long getProduct_id() {
         return product_id;
     }
 
-    public void setpProduct_id(long pId) {
+    public void setProduct_id(long pId) {
         this.product_id = pId;
     }
 

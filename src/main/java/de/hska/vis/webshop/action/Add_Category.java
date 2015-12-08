@@ -27,6 +27,7 @@ public class Add_Category extends ActionSupport {
     @Override
     public String execute() {
 
+        //returns input if the category exists already
         Category category = null;
         category = getProductByLabel(categoryBean.getLabel());
         if (!(category == null)) return INPUT;
@@ -35,6 +36,7 @@ public class Add_Category extends ActionSupport {
         Session session = null;
         Transaction transaction = null;
 
+        //saves the category in database
         try {
             session = sf.getCurrentSession();
             transaction = session.beginTransaction();
@@ -49,6 +51,11 @@ public class Add_Category extends ActionSupport {
         }
     }
 
+    /**
+     * Gives the category with the choosen label
+     * @param label String categoryname
+     * @return null if category doesn't exist or the category
+     */
     private Category getProductByLabel(String label)
     {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();

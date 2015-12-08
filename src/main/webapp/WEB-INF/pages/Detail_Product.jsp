@@ -9,11 +9,14 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    <title>Deteiansicht eines Products</title>
+    <title>Deteiansicht: <s:property value="productBean.label"/> </title>
 </head>
 <body>
-    <h2><s:property value="product.label"/></h2>
-    <p><s:property value="product.description"/></p>
+    <h2><s:property value="productBean.label"/></h2>
+    <p>Beschreibung: <s:property value="productBean.description"/></p>
+    <p>Kategory: <s:property value="productBean.category"/></p>
+    <p>Preis: <s:property value="productBean.price"/> Btc</p>
+    <p>Nur noch <s:property value="productBean.stock"/> auf Lager</p>
 
 </body>
 </html>
