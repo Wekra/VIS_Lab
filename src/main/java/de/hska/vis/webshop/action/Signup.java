@@ -56,14 +56,14 @@ public class Signup extends ActionSupport {
     @Override
     public void validate(){
         // validate Password
-        if(userBean.getPassword() == null) {
+        if(userBean.getPassword().length() == 0) {
             addFieldError("userBean.getPassword", "Password is Required");
         }else if(userBean.getPassword().length() < 8) {
             addFieldError("userBean.getPassword", "Password has to be at least eight characters long");
         }
 
         // validate Email (Username)
-        if(userBean.getEmail() != null){
+        if(userBean.getEmail().length() == 0){
             addFieldError("userBean.getEmail","Email is Required");
         }else {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -83,7 +83,7 @@ public class Signup extends ActionSupport {
         }
 
         // validate others
-        if(userBean.getCity() != null){
+        if(userBean.getCity().length() == 0){
             addFieldError("userBean.getCity","City is Required");
         }
 
@@ -92,23 +92,23 @@ public class Signup extends ActionSupport {
             addFieldError("userBean.getCountry","Country is Required");
         }
 
-        if(userBean.getFirstname() != null){
+        if(userBean.getFirstname().length() == 0){
             addFieldError("userBean.getFirstname","Firstname is Required");
         }
 
-        if(userBean.getLastname() != null){
+        if(userBean.getLastname().length() == 0){
             addFieldError("userBean.getLastname","Lastname is Required");
         }
 
-        if(userBean.getNumber() != null){
+        if(userBean.getNumber().length() == 0){
             addFieldError("userBean.getNumber","Number is Required");
         }
 
-        if(userBean.getStreet() != null){
+        if(userBean.getStreet().length() == 0){
             addFieldError("userBean.getStreet","Street is Required");
         }
 
-        if(userBean.getZip() != null){
+        if(userBean.getZip().length() == 0){
             addFieldError("userBean.getZip","Zip is Required");
         }
 
