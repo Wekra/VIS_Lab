@@ -15,18 +15,19 @@
 <div class="container">
     <h3>Shop-stub</h3>
     <p>Some paragraph.</p>
-    <s:iterator value="productList">
-        <tr>
-            <td><s:property value="label"/></td>
-            <p>Preis: </p><td><s:property value="price"/></td>
-        </tr>
-    </s:iterator>
 </div>
 
 <div class="contact">
     <hr />
     <s:text name="contact" />
 </div>
+
+<s:iterator value="productList">
+    <tr>
+        <td><s:property value="label"/></td>
+        <p>Preis: </p><td><s:property value="price"/></td>
+    </tr>
+</s:iterator>
 
 </body>
 </html>
