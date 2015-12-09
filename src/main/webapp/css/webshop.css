@@ -34,6 +34,12 @@ h3{
     width:100%;
 }
 
+.search {
+    position: absolute;
+    top: 5px;
+    width: 100%;
+}
+
 .myClass {
     color: black;
     font-weight: bold;
