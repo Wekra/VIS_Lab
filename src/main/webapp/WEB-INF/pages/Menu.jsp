@@ -7,11 +7,26 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     <title>MILKROAD</title>
+    <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 </head>
 <body>
-<h3>Shop-stub</h3>
 
-<p>Some paragraph.</p>
+<div class="container">
+    <h3>Shop-stub</h3>
+    <p>Some paragraph.</p>
+    <s:iterator value="productList">
+        <tr>
+            <td><s:property value="label"/></td>
+            <p>Preis: </p><td><s:property value="price"/></td>
+        </tr>
+    </s:iterator>
+</div>
+
+<div class="contact">
+    <hr />
+    <s:text name="contact" />
+</div>
 
 <s:iterator value="productList">
     <tr>

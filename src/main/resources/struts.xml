@@ -56,11 +56,12 @@
         <action name="GoTo_Admin_Main" class="de.hska.vis.webshop.action.GoTo_Admin_Main">
             <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
         </action>
-        
+
+
         <action name="GoTo_Detail_Product" class="de.hska.vis.webshop.action.GoTo_Detail_Product">
             <result name="success">/WEB-INF/pages/Detail_Product.jsp</result>
         </action>
-        
+
         <action name="GoTo_Add_Category" class="de.hska.vis.webshop.action.GoTo_Add_Category">
             <result name="success">/WEB-INF/pages/Add_Category.jsp</result>
         </action>

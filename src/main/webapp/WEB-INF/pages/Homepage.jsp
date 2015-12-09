@@ -13,22 +13,21 @@
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Welcome to MILKROAD</title>
-    <link href="<s:url value="/css/examplecss"/>" rel="stylesheet"
-          type="text/css"/>
+    <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 </head>
 
 <body>
-<h1>Welcome to MILKROAD</h1>
-<h2>This is our webshop. It is the milkiest webshop you'll find on the interwebz. </h2>
-<h3>It's very good.</h3>
-<p>If you want to visit our shop, please <a href="<s:url action="Login_input"/>">Log-in</a> or <a href="<s:url action="Signup_input"/>">Sign-up</a>.</p>
-<!--
-<ul>
-    <li><a href="<s:url action="Login_input"/>">Sign On</a></li>
-    <li><a href="<s:url action="Register"/>">Register</a></li>
-</ul>
--->
-<hr />
-<s:text name="contact" />
+<div class="container">
+        <h1>Welcome to the MILKROAD</h1>
+        <h2>This is our webshop. It is the milkiest webshop you'll find on the interwebz. </h2>
+        <h3>If you want to visit our shop, please <a href="<s:url action="Login_input"/>">Log-in</a> or <a href="<s:url action="Signup_input"/>">Sign-up</a>.</h3>
+</div>
+
+<div class="contact">
+    <hr />
+    <s:text name="contact" />
+</div>
+
 </body>
 </html>
