@@ -21,10 +21,12 @@
 
 package de.hska.vis.webshop.action;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 /**
  * <code>Set welcome message.</code>
  */
-public class HelloWorld extends ExampleSupport {
+public class HelloWorld extends ActionSupport {
 
     public String execute() throws Exception {
         setMessage(getText(MESSAGE));
