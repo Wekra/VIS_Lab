@@ -40,7 +40,6 @@ public class Login extends ActionSupport {
 
         if(!isPasswordValid(user)) return INPUT;
 
-
         return SUCCESS;
     }
 

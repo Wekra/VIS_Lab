@@ -28,5 +28,12 @@
     <s:text name="contact" />
 </div>
 
+<s:iterator value="productList">
+    <tr>
+        <td><s:property value="label"/></td>
+        <p>Preis: </p><td><s:property value="price"/></td>
+    </tr>
+</s:iterator>
+
 </body>
 </html>

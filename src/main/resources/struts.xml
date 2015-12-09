@@ -57,6 +57,7 @@
             <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
         </action>
 
+
         <action name="GoTo_Detail_Product" class="de.hska.vis.webshop.action.GoTo_Detail_Product">
             <result name="success">/WEB-INF/pages/Detail_Product.jsp</result>
         </action>
