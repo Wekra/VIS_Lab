@@ -13,26 +13,39 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     <title>MILKROAD</title>
+    <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 </head>
 <body>
-<p><a href="<s:url action="GoTo_Search"/>">Suche</a>. </p>
-<h3>Shop-stub</h3>
-
-<p>Some paragraph.</p>
-<p>Neues Produkt <a href="<s:url action="GoTo_add_product"/>">hinzufügen</a>. </p>
-<p>Neue Kategory <a href="<s:url action="GoTo_Add_Category"/>">hinzufügen</a>. </p>
 
 
-<s:iterator value="productList">
-    <tr>
-        <td><a href="
+<div class="container">
+    <div class="search">
+        <p><a href="<s:url action="GoTo_Search"/>">Suche</a>. </p>
+    </div>
+    <h1>Shop-stub</h1>
+
+    <p>Neues Produkt <a href="<s:url action="GoTo_add_product"/>">hinzufügen</a>. </p>
+    <p>Neue Kategory <a href="<s:url action="GoTo_Add_Category"/>">hinzufügen</a>. </p>
+
+<p/>
+    <h3>Produktübersicht</h3>
+
+    <s:iterator value="productList">
+        <tr>
+            <td><a href="
             <s:url action="GoTo_Detail_Product">
                 <s:param name="id" value="product_id"/>
             </s:url>"><s:property value="label"/></a>
-        </td>
-        <p>Preis: <td><s:property value="price"/></td></p>
-    </tr>
-</s:iterator>
+            </td>
+            <p>Preis: <td><s:property value="price"/></td></p>
+        </tr>
+    </s:iterator>
+</div>
 
+<div class="contact">
+    <hr />
+    <s:text name="contact" />
+</div>
 </body>
 </html>
