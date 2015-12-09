@@ -14,7 +14,7 @@
         <s:form action="LoginSubmit">
             <s:textfield cssClass="myClass" key="email"/>
             <s:password cssClass="myClass" key="password" />
-            <s:submit/>
+            <s:submit key="loginButton"/>
         </s:form>
 </div>
 

@@ -9,8 +9,6 @@
 
     <package name="webshop" namespace="/webshop" extends="struts-default">
 
-        <default-action-ref name="HelloWorld" />
-
         <action name="Homepage" class="de.hska.vis.webshop.action.HelloWorld">
             <result>/WEB-INF/pages/Homepage.jsp</result>
         </action>
@@ -24,12 +22,13 @@
             <result type="redirectAction">Homepage</result>
         </action>
 
-        <action name="Access_menu" method="execute" class="de.hska.vis.webshop.action.ExampleSupport">
+        <action name="Access_menu" method="execute" class="de.hska.vis.webshop.action.GoTo_User_Main">
             <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
         </action>
 
         <action name="LoginSubmit" method="execute" class="de.hska.vis.webshop.action.Login">
-            <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
+            <result name="admin">/WEB-INF/pages/Admin_Menu.jsp</result>
+            <result name="success">/WEB-INF/pages/Menu.jsp</result>
             <result name="input">/WEB-INF/pages/Login.jsp</result>
         </action>
         <!-- Add additional "webshop" package actions here. -->
@@ -39,18 +38,18 @@
         </action>
 
         <action name="SignupSubmit" class="de.hska.vis.webshop.action.Signup" method="execute">
-            <result name="success">/WEB-INF/pages/Registration_successfull.jsp</result>
+            <result name="success">/WEB-INF/pages/Registration_Successfull.jsp</result>
             <result name="input">/WEB-INF/pages/Signup.jsp</result>
         </action>
 
-        <action name="GoTo_add_product" class="de.hska.vis.webshop.action.GoTo_Add_Product">
-            <result name="success">/WEB-INF/pages/Add_product.jsp</result>
+        <action name="GoTo_Add_Product" class="de.hska.vis.webshop.action.GoTo_Add_Product">
+            <result name="success">/WEB-INF/pages/Add_Product.jsp</result>
+            <result name="input">/WEB-INF/pages/Add_Category.jsp</result>
         </action>
 
-        <action name="Add_product" class="de.hska.vis.webshop.action.Add_Product" method="execute">
-            <interceptor-ref name="defaultStack"></interceptor-ref>
-            <result name="success">/WEB-INF/pages/Add_product_successfull.jsp</result>
-            <result name="input">/WEB-INF/pages/Add_product.jsp</result>
+        <action name="Add_Product" class="de.hska.vis.webshop.action.Add_Product" method="execute">
+            <result name="success">/WEB-INF/pages/Add_Product_Successfull.jsp</result>
+            <result name="input">/WEB-INF/pages/Add_Product.jsp</result>
         </action>
 
         <action name="GoTo_Admin_Main" class="de.hska.vis.webshop.action.GoTo_Admin_Main">
@@ -77,6 +76,10 @@
 
         <action name="Search_Result" class="de.hska.vis.webshop.action.Search_Result">
             <result name="success">/WEB-INF/pages/Search_Result.jsp</result>
+        </action>
+
+        <action name="Logout" class="de.hska.vis.webshop.action.Logout">
+            <result name="success">/WEB-INF/pages/Homepage.jsp</result>
         </action>
 
     </package>
