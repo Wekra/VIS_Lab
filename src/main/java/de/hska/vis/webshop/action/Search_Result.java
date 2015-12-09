@@ -55,6 +55,8 @@ public class Search_Result extends ActionSupport {
 
     public String execute()
     {
+
+        if(maxPrice <= 0) maxPrice = 1000000;
         productList = productSearch(searchText, minPrice, maxPrice);
         return SUCCESS;
     }

@@ -12,6 +12,7 @@
     <title>Deteiansicht: <s:property value="productBean.label"/> </title>
 </head>
 <body>
+    <p><a href="<s:url action="GoTo_Admin_Main"/>">Hauptmenü</a>. </p>
     <h2><s:property value="productBean.label"/></h2>
     <p>Beschreibung: <s:property value="productBean.description"/></p>
     <p>Kategory: <s:property value="productBean.category"/></p>

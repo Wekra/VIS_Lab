@@ -12,12 +12,11 @@
     <title>Erweiterte Suche</title>
 </head>
 <body>
+
 <s:form action="Search_Result">
     <s:textfield key="search" name="searchText"/>
-    <p>
-        <s:textfield key="minPrice" name="minPrice"/>
-        <s:textfield key="maxPrice" name="maxPrice"/>
-    </p>
+    <s:textfield key="minPrice" name="minPrice"/>
+    <s:textfield key="maxPrice" name="maxPrice"/>
     <s:submit/>
 </s:form>
 

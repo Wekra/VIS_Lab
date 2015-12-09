@@ -12,6 +12,9 @@
     <title>Suchergebnis</title>
 </head>
 <body>
+
+<p><a href="<s:url action="GoTo_Admin_Main"/>">Hauptmenü</a>. </p>
+
 <s:iterator value="productList">
     <tr>
         <td><a href="
