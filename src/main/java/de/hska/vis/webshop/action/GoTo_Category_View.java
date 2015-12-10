@@ -44,4 +44,6 @@ public class GoTo_Category_View extends ActionSupport {
         session.close();
         return null;
     }
+
+
 }

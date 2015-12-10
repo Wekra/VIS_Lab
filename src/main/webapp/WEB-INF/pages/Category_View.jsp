@@ -14,22 +14,23 @@
 <body>
 <s:iterator value="categoryList">
     <tr>
+        <p>
         <td>
             <s:property value="label"/>
-        </td>
-        <td>
+
             <a href="
                      <s:url action="GoTo_Edit_Category">
                         <s:param name="id" value="category_id"/>
                     </s:url>
             ">Editieren    </a>
+
             <a href="
                      <s:url action="Delete_Category">
                         <s:param name="id" value="category_id"/>
                     </s:url>
             ">Löschen</a>
         </td>
-        <p>Preis: <td><s:property value="price"/></td></p>
+        </p>
     </tr>
 </s:iterator>
 </body>

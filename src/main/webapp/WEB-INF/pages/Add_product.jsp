@@ -13,7 +13,7 @@
 </head>
 <body>
     <h2>Please fill in</h2>
-    <s:form action="Add_product" enctype="multipart/form-data">
+    <s:form action="Add_Product" enctype="multipart/form-data">
         <s:textfield key="productname" name="productBean.label"/>
         <s:textarea key="description" name="productBean.description"/>
         <s:select key="category" list="categoryLabelList" name="productBean.category"/>

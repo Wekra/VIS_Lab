@@ -2,25 +2,35 @@ package de.hska.vis.webshop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import de.hska.vis.webshop.helper.HibernateUtil;
-import de.hska.vis.webshop.model.Category;
+import de.hska.vis.webshop.model.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 /**
- * Created by Marcel on 10.12.2015.
+ * Created by Marcel on 09.12.2015.
  */
-public class Edit_Category extends ActionSupport {
+public class Delete_Product extends ActionSupport {
 
-    public Category getCategoryBean() {
-        return categoryBean;
+    public long getSpecialId() {
+        return specialId;
     }
 
-    public void setCategoryBean(Category categoryBean) {
-        this.categoryBean = categoryBean;
+    public void setSpecialId(long specialId) {
+        this.specialId = specialId;
     }
 
-    private Category categoryBean;
+    private long specialId;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    private Product product;
 
     public String execute()
     {
@@ -31,7 +41,8 @@ public class Edit_Category extends ActionSupport {
         try {
             session = sf.getCurrentSession();
             transaction = session.beginTransaction();
-            session.update(categoryBean);
+            product = (Product)session.get(Product.class,this.specialId);
+            session.delete(product);
             transaction.commit();
 
             return SUCCESS;

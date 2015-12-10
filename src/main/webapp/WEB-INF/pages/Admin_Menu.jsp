@@ -31,6 +31,7 @@
 
             <p>Neues Produkt <a href="<s:url action="GoTo_Add_Product"/>">hinzufügen</a>. </p>
             <p>Neue Kategory <a href="<s:url action="GoTo_Add_Category"/>">hinzufügen</a>. </p>
+            <p>Kategory <a href="<s:url action="GoTo_Category_View"/>">bearbeiten</a>. </p>
 
             <p/>
             <h2>Produktübersicht</h2>
