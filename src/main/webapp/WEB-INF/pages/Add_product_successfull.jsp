@@ -8,17 +8,33 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Added Product successfull</title>
-</head>
-<body>
-<h2>Das Produkt wurde erfolgreich hinzugefügt</h2>
-<p>Name: <s:property value="productBean.label"/></p>
-<p>Beschreibung: <s:property value="productBean.description"/></p>
-<p>Kategory: <s:property value="productBean.category"/></p>
-<p>Preis: <s:property value="productBean.price"/></p>
-<p>Auf Lager: <s:property value="productBean.stock"/></p>
-
-<p><a href="<s:url action="GoTo_Admin_Main"/>">Zum Hauptmenü</a>. </p>
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <title>The MILKROAD - Neues Produkt</title>
+        <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
+        <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <div class="nav">
+                <ul class="pull-left">
+                    <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
+                    <li><a href="<s:url action="Logout"/>">Logout</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Produkt erfolgreich hinzugefügt</h1>
+            <p/>
+            <h2><s:property value="productBean.label"/></h2>
+            <p/>
+            <h3>Beschreibung</h3>
+            <p><s:property value="productBean.description"/></p>
+            <p>Kategorie: <s:property value="productBean.category"/></p>
+            <p>Preis: <s:property value="productBean.price"/> Btc</p>
+            <p>Auf Lager: <s:property value="productBean.stock"/></p>
+            <p/>
+            <p><a href="<s:url action="GoTo_Admin_Main"/>">Zum Hauptmenü</a>. </p>
+        </div>
+    </body>
 </html>

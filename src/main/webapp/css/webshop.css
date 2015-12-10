@@ -12,14 +12,14 @@ h1 {
 
 h2 {
     font-family: 'Shift', sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 h3{
     font-family:'Shift', sans-serif;
     color: #393c3d;
-    font-size: 24px;
+    font-size: 19px;
 }
 
 .container {
@@ -29,14 +29,42 @@ h3{
 }
 
 .contact {
-    position:absolute;
+    position: fixed;
     bottom: 5px;
     width:100%;
+}
+
+.header {
+    position: relative;
+    top: 0px;
+    left: 60px;
+    width: 100%;
 }
 
 .myClass {
     color: black;
     font-weight: bold;
+}
+
+.searchParagraph{
+    color: black;
+    font-size: 16px;
+}
+
+.nav a {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    color: #393c3d;
+    font-family:'Shift', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 10px;
+    text-transform: uppercase;
+}
+
+.nav li {
+    display: inline;
 }
 
 label[for="labelFirstname"] {

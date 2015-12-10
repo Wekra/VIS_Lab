@@ -8,12 +8,31 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
-<head>
-    <title>Category erfolgreich hinzugefügt</title>
-</head>
-<body>
-    <p>Kategory wurde erfolgreich hinzugefügt</p>
-    <p>Name: <s:property value="categoryBean.label"/></p>
-    <p><a href="<s:url action="GoTo_Admin_Main"/>">Zum Hauptmenü</a>. </p>
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <title>The MILKROAD - Neue Kategorie</title>
+        <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
+        <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <div class="nav">
+                <ul class="pull-left">
+                    <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
+                    <li><a href="<s:url action="Logout"/>">Logout</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Kategorie erfolgreich hinzugefügt</h2>
+            <p/>
+            <p>Die Kategorie "<s:property value="categoryBean.label"/>" wurde erfolgreich hinzugefügt.</p>
+            <p/>
+            <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
+        </div>
+        <div class="contact">
+            <hr />
+            <s:text name="contact" />
+        </div>
+    </body>
 </html>

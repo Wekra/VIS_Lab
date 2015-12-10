@@ -21,16 +21,26 @@
 
 package de.hska.vis.webshop.action;
 
+import com.opensymphony.xwork2.ActionSupport;
 import de.hska.vis.webshop.helper.HibernateUtil;
+import de.hska.vis.webshop.model.Product;
 import de.hska.vis.webshop.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import java.util.Iterator;
 import java.util.List;
 
-public class Login extends ExampleSupport {
+public class Login extends ActionSupport {
 
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    private List<Product> productList;
 
     public String execute() throws Exception {
 
@@ -40,15 +50,22 @@ public class Login extends ExampleSupport {
 
         if(!isPasswordValid(user)) return INPUT;
 
+        if(user.isAdmin()){
+            productList = createProductList();
+            return "admin";
+        }
+
+        productList = createProductList();
 
         return SUCCESS;
     }
 
-    private boolean isInvalid(String value) {
+   private boolean isInvalid(String value) {
         return (value == null || value.length() == 0);
     }
 
     private String email;
+
     public String getEmail() {
         return email;
     }
@@ -95,6 +112,21 @@ public class Login extends ExampleSupport {
         if(getPassword().length() == 0){
             addFieldError("password", "This field must not be empty!");
         }
+    }
+
+    private java.util.List<Product> createProductList() {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        session.beginTransaction();
+        String sql = "from Product";
+        Query query = session.createQuery(sql);
+        java.util.List<Product> list = query.list();
+        if (list.size() > 0) {
+            session.close();
+            return list;
+        }
+        session.close();
+        return null;
     }
 
 
