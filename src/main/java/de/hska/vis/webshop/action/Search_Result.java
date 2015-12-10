@@ -1,6 +1,7 @@
 package de.hska.vis.webshop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import de.hska.vis.webshop.helper.DatabaseQueries;
 import de.hska.vis.webshop.helper.HibernateUtil;
 import de.hska.vis.webshop.model.Product;
 import org.hibernate.Query;
@@ -12,6 +13,13 @@ import java.util.List;
  * Created by Marcel on 08.12.2015.
  */
 public class Search_Result extends ActionSupport {
+
+    private DatabaseQueries database;
+
+    public Search_Result(){
+        super();
+        database = new DatabaseQueries();
+    }
 
     private String searchText;
 
@@ -55,28 +63,8 @@ public class Search_Result extends ActionSupport {
 
     public String execute()
     {
-
         if(maxPrice <= 0) maxPrice = 1000000;
-        productList = productSearch(searchText, minPrice, maxPrice);
+        productList = database.productSearch(searchText, minPrice, maxPrice);
         return SUCCESS;
-    }
-
-    private java.util.List<Product> productSearch(String text, double min, double max) {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-
-        session.beginTransaction();
-        String sql = "from Product as u where (u.label like :text or u.description like :text " +
-                "or  u.category like :text) and u.price between :min and :max";
-        Query query = session.createQuery(sql);
-        query.setParameter("text", "%" + text +"%");
-        query.setParameter("min",min);
-        query.setParameter("max", max);
-        java.util.List<Product> list = query.list();
-        if (list.size() > 0) {
-            session.close();
-            return list;
-        }
-        session.close();
-        return null;
     }
 }

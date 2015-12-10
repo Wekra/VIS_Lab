@@ -1,6 +1,8 @@
 package de.hska.vis.webshop.action;
 
+import com.mysql.fabric.xmlrpc.base.Data;
 import com.opensymphony.xwork2.ActionSupport;
+import de.hska.vis.webshop.helper.DatabaseQueries;
 import de.hska.vis.webshop.helper.HibernateUtil;
 import de.hska.vis.webshop.model.Product;
 import org.hibernate.Query;
@@ -11,6 +13,13 @@ import org.hibernate.Session;
  */
 
 public class GoTo_Detail_Product extends ActionSupport {
+
+    private DatabaseQueries database;
+
+    public GoTo_Detail_Product(){
+        super();
+        database = new DatabaseQueries();
+    }
 
     public Product getProductBean() {
         return productBean;
@@ -34,26 +43,9 @@ public class GoTo_Detail_Product extends ActionSupport {
 
     public String execute()
     {
-        productBean = getProductFromId(this.id);
+        productBean = database.getProductFromId(this.id);
         if(productBean == null) return INPUT;
 
         return SUCCESS;
     }
-
-    private Product getProductFromId(long nid) {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-
-        session.beginTransaction();
-        String sql = "from Product as u where u.product_id =:na";
-        Query query = session.createQuery(sql);
-        query.setParameter("na", nid);
-        java.util.List<Product> list = query.list();
-        if (list.size() > 0) {
-            session.close();
-            return list.get(0);
-        }
-        session.close();
-        return null;
-    }
-
 }
