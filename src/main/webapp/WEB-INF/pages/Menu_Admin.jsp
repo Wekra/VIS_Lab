@@ -31,7 +31,7 @@
                 <h1>Shop-stub</h1>
 
                 <p>Neues Produkt <a href="<s:url action="GoTo_Add_Product"/>">hinzufügen</a>. </p>
-                <p>Neue Kategory <a href="<s:url action="GoTo_Add_Category"/>">hinzufügen</a>. </p>
+                <p>Neue Kategorie <a href="<s:url action="GoTo_Add_Category"/>">hinzufügen</a>. </p>
 
                 <p/>
                 <h2>Produktübersicht</h2>
