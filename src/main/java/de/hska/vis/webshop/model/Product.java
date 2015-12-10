@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 /**
  * Created by Christian on 30.11.2015.
+ * This class represents the product table of the webshop database.
  */
 @Entity
 public class Product {

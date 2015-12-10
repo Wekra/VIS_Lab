@@ -6,10 +6,11 @@ import de.hska.vis.webshop.model.User;
 
 /**
  * Created by Christian on 25.11.2015.
+ * This class is used as action to sign-up as a new user.
  */
 public class Signup extends ActionSupport {
 
-    DatabaseQueries database;
+    private final DatabaseQueries database;
 
     public Signup(){
         super();
@@ -29,9 +30,6 @@ public class Signup extends ActionSupport {
     private User userBean;
 
     public String execute() throws Exception {
-       /* User user = new User();
-        user.setFirstname(userBean.getFirstname());
-        user.setLastname(userBean.getLastname());*/
 
         if(database.saveUserToDatabase(userBean)){
             return SUCCESS;
@@ -41,7 +39,7 @@ public class Signup extends ActionSupport {
     }
 
     /**
-     * Validates the input in the textfields on the signup page.
+     * Validates the input entered to the text-fields on the sign-up page.
      */
     @Override
     public void validate(){
@@ -57,7 +55,7 @@ public class Signup extends ActionSupport {
             addFieldError("userBean.email","Email is Required");
         }else {
 
-            User user = null;
+            User user;
             user = database.getUserByEmail(userBean.getEmail());
 
             if (user != null) {

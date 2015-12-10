@@ -10,11 +10,12 @@ import org.hibernate.Session;
 
 /**
  * Created by Marcel on 07.12.2015.
+ * This class is used as action to redirect to the detail page of a product.
  */
 
 public class GoTo_Detail_Product extends ActionSupport {
 
-    private DatabaseQueries database;
+    private final DatabaseQueries database;
 
     public GoTo_Detail_Product(){
         super();

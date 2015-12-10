@@ -11,10 +11,11 @@ import java.util.List;
 
 /**
  * Created by Marcel on 08.12.2015.
+ * This class is used as action to display the results of a performed search.
  */
 public class Search_Result extends ActionSupport {
 
-    private DatabaseQueries database;
+    private final DatabaseQueries database;
 
     public Search_Result(){
         super();

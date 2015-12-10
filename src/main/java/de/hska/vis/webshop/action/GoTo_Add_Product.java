@@ -8,17 +8,16 @@ import java.util.List;
 
 /**
  * Created by Marcel on 07.12.2015.
+ * This class is used to add a new product to the webshop.
  */
 public class GoTo_Add_Product extends ActionSupport {
 
-    private DatabaseQueries database;
+    private final DatabaseQueries database;
 
     public GoTo_Add_Product(){
         super();
         database = new DatabaseQueries();
     }
-
-    private List<Category> helperList;
 
     public String[] getCategoryLabelList() {
         return categoryLabelList;
@@ -33,13 +32,13 @@ public class GoTo_Add_Product extends ActionSupport {
     @Override
     public String execute() {
 
-        helperList = database.createCategoryList();
+        List<Category> helperList = database.createCategoryList();
         if(helperList == null)
         {
             return INPUT;
         }
 
-        //create String Array with the labels of the categorys
+        //create String Array with the labels of the categories
         categoryLabelList = new String[helperList.size()];
         for(int i = 0; helperList.size() > i; i++)
         {

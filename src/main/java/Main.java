@@ -11,6 +11,7 @@ import java.util.Map;
 
 /**
  * Created by Christian on 18.11.2015.
+ * This class is used to connect to the webshop database via hibernate.
  */
 public class Main {
     private static final SessionFactory ourSessionFactory;

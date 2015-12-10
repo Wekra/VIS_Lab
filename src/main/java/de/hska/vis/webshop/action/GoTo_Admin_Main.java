@@ -11,10 +11,11 @@ import java.util.List;
 
 /**
  * Created by Marcel on 07.12.2015.
+ * This class is used as action to redirect to the main-view of the admin.
  */
 public class GoTo_Admin_Main extends ActionSupport {
 
-    private DatabaseQueries database;
+    private final DatabaseQueries database;
 
     public GoTo_Admin_Main(){
         super();

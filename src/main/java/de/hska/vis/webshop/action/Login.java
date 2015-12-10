@@ -29,7 +29,7 @@ import de.hska.vis.webshop.model.User;
 import java.util.List;
 
 public class Login extends ActionSupport {
-    private DatabaseQueries database;
+    private final DatabaseQueries database;
 
     public Login(){
         super();
@@ -48,7 +48,7 @@ public class Login extends ActionSupport {
 
     public String execute() throws Exception {
 
-        User user = null;
+        User user;
         user = database.getUserByEmail(getEmail());
         if (user == null) return INPUT;
 

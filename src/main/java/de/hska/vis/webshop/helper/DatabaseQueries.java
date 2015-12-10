@@ -12,18 +12,23 @@ import java.util.List;
 
 /**
  * Created by Christian on 10.12.2015.
+ * This class is used as helper-class to perform all database queries.
  */
 public class DatabaseQueries {
 
-    private static SessionFactory sf;
+    private static final SessionFactory sf;
 
     static {
         sf = HibernateUtil.getSessionFactory();
     }
 
     private Session session = null;
-    private Transaction transaction = null;
 
+    /**
+     * This method gets a User-object from the database identified by the email-value.
+     * @param email the email is used as search-criteria
+     * @return User-object from the database which matches with the given email
+     */
     public User getUserByEmail(String email){
         session = sf.getCurrentSession();
 
@@ -31,7 +36,7 @@ public class DatabaseQueries {
         String sql = "from User as u where u.email=:mail";
         Query query = session.createQuery(sql);
         query.setParameter("mail", email);
-        List<User> list = query.list();
+        java.util.List<User> list = query.list();
         if (list.size() > 0 ){
             session.close();
             return list.get(0);
@@ -40,6 +45,10 @@ public class DatabaseQueries {
         return null;
     }
 
+    /**
+     * This method is used to create a list of products stored in the database.
+     * @return List of product-objects stored in the database
+     */
     public List<Product> createProductList() {
         session = sf.getCurrentSession();
 
@@ -69,15 +78,15 @@ public class DatabaseQueries {
     }
 
     /**
-     * Helpermethode to saved objects to the database.
-     * @param object the objec to be saved
+     * Helper-method to saved objects to the database.
+     * @param object the object to be saved
      * @return true if the save was successful, false otherwise
      */
     private boolean wasSavedToDatabase(Object object) {
         boolean returnValue;
         try {
             session = sf.getCurrentSession();
-            transaction = session.beginTransaction();
+            Transaction transaction = session.beginTransaction();
             session.save(object);
             transaction.commit();
 
@@ -92,7 +101,7 @@ public class DatabaseQueries {
 
     /**
      * Saves the User-object to the database.
-     * @param user
+     * @param user the User-object to be saved
      * @return true if the save was successful, false otherwise.
      */
     public boolean saveUserToDatabase(User user){
@@ -100,8 +109,8 @@ public class DatabaseQueries {
     }
 
     /**
-     * Gives the category with the choosen label
-     * @param label String categoryname
+     * Gives the category with the chosen label
+     * @param label the name of the category as <code>String</code>
      * @return null if category doesn't exist or the category
      */
     public Category getCategoryByLabel(String label){
@@ -111,7 +120,7 @@ public class DatabaseQueries {
         String sql = "from Category as u where u.label=:label";
         Query query = session.createQuery(sql);
         query.setParameter("label", label);
-        List<Category> list = query.list();
+        java.util.List<Category> list = query.list();
         if (list.size() > 0 ){
             session.close();
             return list.get(0);
@@ -121,7 +130,7 @@ public class DatabaseQueries {
     }
 
     /**
-     * creates a list with all categorys in it
+     * creates a list with all categories in it
      * @return null if the list is empty or the list
      */
     public List<Category> createCategoryList(){
@@ -130,7 +139,7 @@ public class DatabaseQueries {
         session.beginTransaction();
         String sql = "from Category ";
         Query query = session.createQuery(sql);
-        List<Category> list = query.list();
+        java.util.List<Category> list = query.list();
         if (list.size() > 0) {
             session.close();
             return list;
@@ -141,8 +150,8 @@ public class DatabaseQueries {
 
     /**
      * Saves a product-object to the database.
-     * @param product
-     * @return
+     * @param product the product-object to be saved
+     * @return true if the product was saved successful, otherwise false
      */
     public boolean saveProductToDatabase(Product product){
         return wasSavedToDatabase(product);
@@ -166,6 +175,13 @@ public class DatabaseQueries {
         return null;
     }
 
+    /**
+     * This method is used to search in the database.
+     * @param text the text to be searched as <code>String</code>
+     * @param min the minimum price as <code>double</code>
+     * @param max the maximum price as <code>double</code>
+     * @return a List of products which match the given search-parameters
+     */
     public List<Product> productSearch(String text, double min, double max) {
         session = sf.getCurrentSession();
 
@@ -176,7 +192,7 @@ public class DatabaseQueries {
         query.setParameter("text", "%" + text +"%");
         query.setParameter("min",min);
         query.setParameter("max", max);
-        List<Product> list = query.list();
+        java.util.List<Product> list = query.list();
         if (list.size() > 0) {
             session.close();
             return list;

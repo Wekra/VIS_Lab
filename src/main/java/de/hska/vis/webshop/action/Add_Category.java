@@ -6,10 +6,11 @@ import de.hska.vis.webshop.model.Category;
 
 /**
  * Created by Marcel on 07.12.2015.
+ * This class is used as action to create a new category in the webshop.
  */
 public class Add_Category extends ActionSupport {
 
-    private DatabaseQueries database;
+    private final DatabaseQueries database;
 
     public Add_Category(){
         super();
@@ -25,11 +26,12 @@ public class Add_Category extends ActionSupport {
     }
 
     private Category categoryBean;
+
     @Override
     public String execute() {
 
         //returns input if the category exists already
-        Category category = null;
+        Category category;
         category = database.getCategoryByLabel(categoryBean.getLabel());
         if (!(category == null)) return INPUT;
 

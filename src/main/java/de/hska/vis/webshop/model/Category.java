@@ -7,9 +7,11 @@ import javax.persistence.Id;
 
 /**
  * Created by Christian on 30.11.2015.
+ * This class represents the category-table of the webshop database.
  */
 @Entity
 public class Category {
+
     private long category_id;
     private String label;
     private String description;

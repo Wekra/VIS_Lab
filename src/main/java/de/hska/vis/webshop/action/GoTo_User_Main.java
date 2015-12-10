@@ -11,10 +11,11 @@ import java.util.List;
 
 /**
  * Created by Christian on 09.12.2015.
+ * This class is used as action to redirect to the main page of the user view.
  */
 public class GoTo_User_Main extends ActionSupport {
 
-    private DatabaseQueries database;
+    private final DatabaseQueries database;
 
     public GoTo_User_Main(){
         super();
