@@ -1,7 +1,5 @@
 package de.hska.vis.webshop.model;
 
-import com.mysql.jdbc.Blob;
-
 import javax.persistence.*;
 
 /**

@@ -79,6 +79,13 @@
             <result name="success">/WEB-INF/pages/Search_Result.jsp</result>
         </action>
 
+        <action name="Delete_Product" class="de.hska.vis.webshop.action.Delete_Product">
+            <result name="success">/WEB-INF/pages/Delete_Success.jsp</result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+        </action>
+
     </package>
 
     <package name="default" namespace="/" extends="struts-default">
