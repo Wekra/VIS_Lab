@@ -19,21 +19,23 @@
     </head>
     <body>
         <div class="container">
-            <h1>Für The MILKROAD registrieren</h1>
-            <h3>-mmmh milky</h3>
-            <h3>Um sich zu registrieren geben Sie bitte folgende Daten über sich an:</h3>
-            <s:form action="SignupSubmit">
-                <s:textfield id="labelFirstname" key="firstname" name="userBean.firstname"/>
-                <s:textfield id="labelLastname" key="lastname" name="userBean.lastname"/>
-                <s:textfield id="labelEmail" key="email" name="userBean.email"/>
-                <s:textfield id="labelStreet" key="street" name="userBean.street" />
-                <s:textfield id="labelNumber" key="number" name="userBean.number" />
-                <s:textfield id="labelZip" key="zip" name="userBean.zip" />
-                <s:textfield id="labelCity" key="city" name="userBean.city" />
-                <s:textfield id="labelCountry" key="country" name="userBean.country" />
-                <s:password id="labelPassword" key="password" name="userBean.password" />
-                <s:submit key="registerButton"/>
-            </s:form>
+            <div class="content-container">
+                <h1>Für The MILKROAD registrieren</h1>
+                <h3>-mmmh milky</h3>
+                <h3>Um sich zu registrieren geben Sie bitte folgende Daten über sich an:</h3>
+                <s:form action="SignupSubmit">
+                    <s:textfield id="labelFirstname" key="firstname" name="userBean.firstname"/>
+                    <s:textfield id="labelLastname" key="lastname" name="userBean.lastname"/>
+                    <s:textfield id="labelEmail" key="email" name="userBean.email"/>
+                    <s:textfield id="labelStreet" key="street" name="userBean.street" />
+                    <s:textfield id="labelNumber" key="number" name="userBean.number" />
+                    <s:textfield id="labelZip" key="zip" name="userBean.zip" />
+                    <s:textfield id="labelCity" key="city" name="userBean.city" />
+                    <s:textfield id="labelCountry" key="country" name="userBean.country" />
+                    <s:password id="labelPassword" key="password" name="userBean.password" />
+                    <s:submit key="registerButton"/>
+                </s:form>
+            </div>
         </div>
         <div class="contact">
             <hr />

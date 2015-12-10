@@ -15,20 +15,22 @@
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     </head>
     <body>
-        <div class="header">
-            <div class="nav">
-                <ul class="pull-left">
-                    <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
-                    <li><a href="<s:url action="Logout"/>">Logout</a> </li>
-                </ul>
-            </div>
-        </div>
         <div class="container">
-            <h2>Kategorie erfolgreich hinzugefügt</h2>
-            <p/>
-            <p>Die Kategorie "<s:property value="categoryBean.label"/>" wurde erfolgreich hinzugefügt.</p>
-            <p/>
-            <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
+            <div class="header">
+                <div class="nav">
+                    <ul class="pull-left">
+                        <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
+                        <li><a href="<s:url action="Logout"/>">Logout</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-container">
+                <h2>Kategorie erfolgreich hinzugefügt</h2>
+                <p/>
+                <p>Die Kategorie "<s:property value="categoryBean.label"/>" wurde erfolgreich hinzugefügt.</p>
+                <p/>
+                <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
+            </div>
         </div>
         <div class="contact">
             <hr />

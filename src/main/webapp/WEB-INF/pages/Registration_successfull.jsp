@@ -19,11 +19,13 @@
     </head>
     <body>
         <div class="container">
-            <h1>Die Registrierung war erfolgreich!</h1>
-            <h3>Sie haben Folgendes bei Ihrer Registration angegeben</h3>
-            <p><s:property value="userBean" /> </p>
+            <div class="content-container">
+                <h1>Die Registrierung war erfolgreich!</h1>
+                <h3>Sie haben Folgendes bei Ihrer Registration angegeben</h3>
+                <p><s:property value="userBean" /> </p>
 
-            <p>Um zum Hauptmenü zu gelangen, klicken Sie bitte <a href="<s:url action="Access_menu"/>">hier</a>. </p>
+                <p>Um zum Hauptmenü zu gelangen, klicken Sie bitte <a href="<s:url action="Access_menu"/>">hier</a>. </p>
+            </div>
         </div>
         <div class="contact">
             <hr />

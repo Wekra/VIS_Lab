@@ -15,25 +15,27 @@
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     </head>
     <body>
-        <div class="header">
-            <div class="nav">
-                <ul class="pull-left">
-                    <li><a href="<s:url action="Logout"/>">Logout</a> </li>
-                </ul>
-            </div>
-        </div>
         <div class="container">
-            <h1>Erweiterte Suche</h1>
-            <s:form action="Search_Result">
-                <!--s:text name="searchString"/-->
-                <s:textfield key="search" name="searchText"/>
-                <!--s:text name="priceRange"/-->
-                <s:textfield key="minPrice" name="minPrice"/>
-                <s:textfield key="maxPrice" name="maxPrice"/>
-                <s:submit key="searchButton"/>
-            </s:form>
-            <p/>
-            <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
+            <div class="header">
+                <div class="nav">
+                    <ul class="pull-left">
+                        <li><a href="<s:url action="Logout"/>">Logout</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-container">
+                <h1>Suche</h1>
+                <s:form action="Search_Result">
+                    <!--s:text name="searchString"/-->
+                    <s:textfield key="search" name="searchText"/>
+                    <!--s:text name="priceRange"/-->
+                    <s:textfield key="minPrice" name="minPrice"/>
+                    <s:textfield key="maxPrice" name="maxPrice"/>
+                    <s:submit key="searchButton"/>
+                </s:form>
+                <p/>
+                <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
+            </div>
         </div>
         <div class="contact">
             <hr />

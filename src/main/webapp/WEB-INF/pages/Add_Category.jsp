@@ -15,25 +15,27 @@
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     </head>
     <body>
-        <div class="header">
-            <div class="nav">
-                <ul class="pull-left">
-                    <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
-                    <li><a href="<s:url action="Logout"/>">Logout</a> </li>
-                </ul>
+        <div class="container">
+            <div class="header">
+                <div class="nav">
+                    <ul class="pull-left">
+                        <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
+                        <li><a href="<s:url action="Logout"/>">Logout</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-container">
+                <h1>Kategorie hinzufügen</h1>
+                <p/>
+                <s:form action="Add_Category">
+                    <s:textfield key="categoryname" name="categoryBean.label"/>
+                    <s:submit/>
+                </s:form>
+                <p/>
+                <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
             </div>
         </div>
-        <div class="container">
-            <h1>Kategorie hinzufügen</h1>
-            <p/>
-            <s:form action="Add_Category">
-                <s:textfield key="categoryname" name="categoryBean.label"/>
-                <s:submit/>
-            </s:form>
-            <p/>
-            <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
-        </div>
-        <div class="contact">
+    <div class="contact">
             <hr />
             <s:text name="contact" />
         </div>

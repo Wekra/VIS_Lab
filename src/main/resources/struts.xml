@@ -23,11 +23,11 @@
         </action>
 
         <action name="Access_menu" method="execute" class="de.hska.vis.webshop.action.GoTo_User_Main">
-            <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
+            <result name="success">/WEB-INF/pages/Menu.jsp</result>
         </action>
 
         <action name="LoginSubmit" method="execute" class="de.hska.vis.webshop.action.Login">
-            <result name="admin">/WEB-INF/pages/Admin_Menu.jsp</result>
+            <result name="admin">/WEB-INF/pages/Menu_Admin.jsp</result>
             <result name="success">/WEB-INF/pages/Menu.jsp</result>
             <result name="input">/WEB-INF/pages/Login.jsp</result>
         </action>
@@ -53,12 +53,16 @@
         </action>
 
         <action name="GoTo_Admin_Main" class="de.hska.vis.webshop.action.GoTo_Admin_Main">
-            <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
+            <result name="success">/WEB-INF/pages/Menu_Admin.jsp</result>
         </action>
 
 
         <action name="GoTo_Detail_Product" class="de.hska.vis.webshop.action.GoTo_Detail_Product">
             <result name="success">/WEB-INF/pages/Detail_Product.jsp</result>
+        </action>
+
+        <action name="GoTo_Detail_Product_Admin" class="de.hska.vis.webshop.action.GoTo_Detail_Product">
+            <result name="success">/WEB-INF/pages/Detail_Product_Admin.jsp</result>
         </action>
 
         <action name="GoTo_Add_Category" class="de.hska.vis.webshop.action.GoTo_Add_Category">

@@ -12,33 +12,35 @@
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     </head>
     <body>
-        <div class="header">
-            <div class="nav">
-                <ul class="pull-left">
-                    <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
-                    <li><a href="<s:url action="Logout"/>">Logout</a> </li>
-                </ul>
-            </div>
-        </div>
         <div class="container">
-            <h1>Shop-stub</h1>
-            <p/>
-            <h2>Produktübersicht</h2>
+            <div class="header">
+                <div class="nav">
+                    <ul class="pull-left">
+                        <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
+                        <li><a href="<s:url action="Logout"/>">Logout</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-container">
+                <h1>Shop-stub</h1>
+                <p/>
+                <h2>Produktübersicht</h2>
 
-            <s:iterator value="productList">
-                <tr>
-                    <td><a href="
-                        <s:url action="GoTo_Detail_Product">
-                            <s:param name="id" value="product_id"/>
-                        </s:url>"><s:property value="label"/></a>
-                    </td>
-                    <p>Preis: <td><s:property value="price"/></td></p>
-                </tr>
-            </s:iterator>
-        </div>
-        <div class="contact">
-            <hr />
-            <s:text name="contact" />
+                <s:iterator value="productList">
+                    <tr>
+                        <td><a href="
+                            <s:url action="GoTo_Detail_Product">
+                                <s:param name="id" value="product_id"/>
+                            </s:url>"><s:property value="label"/></a>
+                        </td>
+                        <p>Preis: <td><s:property value="price"/></td></p>
+                    </tr>
+                </s:iterator>
+            </div>
+            <div>
+                <hr />
+                <s:text name="contact" />
+            </div>
         </div>
     </body>
 </html>
