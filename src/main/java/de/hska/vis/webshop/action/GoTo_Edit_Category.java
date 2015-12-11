@@ -36,30 +36,8 @@ public class GoTo_Edit_Category extends ActionSupport {
     private Category oldCategoryBean;
 
 
-    public String[] getCategoryLabelList() {
-        return categoryLabelList;
-    }
-
-    public void setCategoryLabelList(String[] categoryLabelList) {
-        this.categoryLabelList = categoryLabelList;
-    }
-
-    private String[] categoryLabelList;
-
-
     public String execute()
     {
-        List<Category> helperList = createCategoryList();
-
-        if (!(helperList == null)){
-
-            //create String Array with the labels of the categorys
-            categoryLabelList = new String[helperList.size()];
-            for(int i = 0; helperList.size() > i; i++)
-            {
-                categoryLabelList[i] = helperList.get(i).getLabel();
-            }
-        }
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = null;
         Transaction transaction = null;
@@ -76,21 +54,5 @@ public class GoTo_Edit_Category extends ActionSupport {
             System.out.println(e.getMessage());
             return INPUT;
         }
-    }
-
-    private List<Category> createCategoryList()
-    {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-
-        session.beginTransaction();
-        String sql = "from Category ";
-        Query query = session.createQuery(sql);
-        List<Category> list = query.list();
-        if (list.size() > 0) {
-            session.close();
-            return list;
-        }
-        session.close();
-        return null;
     }
 }

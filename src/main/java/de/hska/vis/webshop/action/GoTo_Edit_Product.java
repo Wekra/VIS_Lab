@@ -47,9 +47,18 @@ public class GoTo_Edit_Product extends ActionSupport {
 
     private String[] categoryLabelList;
 
+    public String getOldCategoryLabel() {
+        return oldCategoryLabel;
+    }
+
+    public void setOldCategoryLabel(String oldCategoryLabel) {
+        this.oldCategoryLabel = oldCategoryLabel;
+    }
+
+    private String oldCategoryLabel;
+
     public String execute()
     {
-
         List<Category> helperList;
 
         helperList = createCategoryList();
@@ -79,6 +88,7 @@ public class GoTo_Edit_Product extends ActionSupport {
             System.out.println(e.getMessage());
             return INPUT;
         }
+        oldCategoryLabel = getCategory_labelFromId(oldProductBean.getCategory_id());
 
         return SUCCESS;
     }
@@ -97,5 +107,21 @@ public class GoTo_Edit_Product extends ActionSupport {
         }
         session.close();
         return null;
+    }
+
+    /**
+     * Gets the category_label with category_id
+     * @param category_id long
+     * @return String category_label
+     */
+    private String getCategory_labelFromId(long category_id)
+    {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+
+        Category category =(Category)session.get(Category.class, category_id);
+
+        session.close();
+        return category.getLabel();
     }
 }

@@ -30,7 +30,7 @@
             <p/>
             <h3>Beschreibung</h3>
             <p><s:property value="productBean.description"/></p>
-            <p>Kategorie: <s:property value="productBean.category"/></p>
+            <p>Kategorie: <s:property value="category_label"/></p>
             <p>Preis: <s:property value="productBean.price"/> Btc</p>
             <p>Auf Lager: <s:property value="productBean.stock"/></p>
             <p/>

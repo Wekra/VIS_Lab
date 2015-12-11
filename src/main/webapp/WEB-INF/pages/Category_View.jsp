@@ -20,7 +20,7 @@
 
             <a href="
                      <s:url action="GoTo_Edit_Category">
-                        <s:param name="id" value="category_id"/>
+                        <s:param name="specialId" value="category_id"/>
                     </s:url>
             ">Editieren    </a>
 

@@ -16,7 +16,7 @@
     <s:form action="Add_Product" enctype="multipart/form-data">
         <s:textfield key="productname" name="productBean.label"/>
         <s:textarea key="description" name="productBean.description"/>
-        <s:select key="category" list="categoryLabelList" name="productBean.category"/>
+        <s:select key="category" list="categoryLabelList" name="category_label"/>
         <s:textfield key="price" name="productBean.price"/>
         <s:textfield key="stock" name="productBean.stock" />
         <s:submit/>

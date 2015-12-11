@@ -15,7 +15,7 @@
     <s:form action="Edit_Product" enctype="multipart/form-data">
         <s:textfield key="productname" name="productBean.label" value="%{oldProductBean.label}"/>
         <s:textarea key="description" name="productBean.description" value="%{oldProductBean.description}"/>
-        <s:select key="category" list="categoryLabelList" name="productBean.category" value="%{oldProductBean.category}"/>
+        <s:select key="category" list="categoryLabelList" name="categoryLabel" value="%{oldCategoryLabel}"/>
         <s:textfield key="price" name="productBean.price" value="%{oldProductBean.price}"/>
         <s:textfield key="stock" name="productBean.stock" value="%{oldProductBean.stock}"/>
         <s:hidden name="productBean.product_id" value="%{oldProductBean.product_id}"/>

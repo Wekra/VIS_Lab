@@ -13,7 +13,7 @@
 </head>
 <body>
 <s:form action="Edit_Category" enctype="multipart/form-data">
-    <s:textfield key="category" name="categoryBean.category" value="%{oldCategoryBean.category}"/>
+    <s:textfield key="category" name="categoryBean.label" value="%{oldCategoryBean.label}"/>
     <s:hidden name="categoryBean.category_id" value="%{oldCategoryBean.category_id}"/>
     <s:submit key="edit"/>
 </s:form>

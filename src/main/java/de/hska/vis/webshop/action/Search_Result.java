@@ -65,15 +65,19 @@ public class Search_Result extends ActionSupport {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
         session.beginTransaction();
-        String sql = "from Product as u where (u.label like :text or u.description like :text " +
-                "or  u.category like :text) and u.price between :min and :max";
+
+        String sql = "from Product as u, Category as c where (u.label like :text or u.description like :text " +
+                /*"or(c.label like :text and u.category_id = c.category_id)" +*/
+                ") and u.price between :min and :max";
         Query query = session.createQuery(sql);
         query.setParameter("text", "%" + text +"%");
         query.setParameter("min",min);
         query.setParameter("max", max);
         java.util.List<Product> list = query.list();
+
         if (list.size() > 0) {
             session.close();
+
             return list;
         }
         session.close();

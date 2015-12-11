@@ -12,17 +12,17 @@ public class Product {
     private String description;
     private double price;
     private int stock;
-    private String category;
+    private long category_id;
 
 
     @Column(name = "CATEGORY")
     @JoinColumn(name = "LABEL")
-    public String getCategory() {
-        return category;
+    public long getCategory_id() {
+        return category_id;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategory_id(long category_id) {
+        this.category_id = category_id;
     }
 
     @Id
