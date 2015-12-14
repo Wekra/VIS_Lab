@@ -28,10 +28,10 @@
                 <h1><s:property value="productBean.label"/> </h1>
                 <p/>
                 <p/>
-                <h3>Beschreibung</h3>
-                <p><s:property value="productBean.description"/></p>
+                <h3>Beschreibung:</h3>
+                <p><b><s:property value="productBean.description"/></b></p>
                 <p><s:property value="productBean.label"/> ist der Kategorie "<s:property value="categoryLabel"/>" zugeordnet.</p>
-                <p>Preis: <s:property value="productBean.price"/> Btc.</p>
+                <p><b>Preis:</b> <s:property value="productBean.price"/> Btc.</p>
                 <p>Noch <s:property value="productBean.stock"/> auf Lager.</p>
                 <p/>
                 <p>
