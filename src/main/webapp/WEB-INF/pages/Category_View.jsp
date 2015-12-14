@@ -37,6 +37,7 @@
                                 <p>Funktionen</p>
                             </th>
                         </tr>
+                        <tr>
                             <td style="width:150px" align="center">
                                 <s:property value="label"/>
                             </td>

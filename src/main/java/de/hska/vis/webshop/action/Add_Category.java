@@ -3,12 +3,6 @@ package de.hska.vis.webshop.action;
 import com.opensymphony.xwork2.ActionSupport;
 import de.hska.vis.webshop.helper.DatabaseQueries;
 import de.hska.vis.webshop.model.Category;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-
-import java.util.List;
 
 /**
  * Created by Marcel on 07.12.2015.

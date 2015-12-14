@@ -7,7 +7,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.jpa.criteria.predicate.BooleanAssertionPredicate;
 
 import java.util.List;
 
@@ -38,6 +37,7 @@ public class DatabaseQueries {
         String sql = "from User as u where u.email=:mail";
         Query query = session.createQuery(sql);
         query.setParameter("mail", email);
+        @SuppressWarnings("unchecked")
         java.util.List<User> list = query.list();
         if (list.size() > 0 ){
             session.close();
@@ -57,6 +57,7 @@ public class DatabaseQueries {
         session.beginTransaction();
         String sql = "from Product";
         Query query = session.createQuery(sql);
+        @SuppressWarnings("unchecked")
         java.util.List<Product> list = query.list();
         if (list.size() > 0) {
             session.close();
@@ -122,6 +123,7 @@ public class DatabaseQueries {
         String sql = "from Category as u where u.label=:label";
         Query query = session.createQuery(sql);
         query.setParameter("label", label);
+        @SuppressWarnings("unchecked")
         java.util.List<Category> list = query.list();
         if (list.size() > 0 ){
             session.close();
@@ -141,6 +143,7 @@ public class DatabaseQueries {
         session.beginTransaction();
         String sql = "from Category ";
         Query query = session.createQuery(sql);
+        @SuppressWarnings("unchecked")
         java.util.List<Category> list = query.list();
         if (list.size() > 0) {
             session.close();
@@ -190,6 +193,7 @@ public class DatabaseQueries {
         query.setParameter("text", "%" + text +"%");
         query.setParameter("min",min);
         query.setParameter("max", max);
+        @SuppressWarnings("unchecked")
         java.util.List<Product> list = query.list();
         if (list.size() > 0) {
             session.close();
@@ -251,7 +255,8 @@ public class DatabaseQueries {
         String sql = "from Category as u where u.label=:label";
         Query query = session.createQuery(sql);
         query.setParameter("label", label);
-        List<Category> list = query.list();
+        @SuppressWarnings("unchecked")
+        java.util.List<Category> list = query.list();
 
         return list.get(0).getCategory_id();
     }
@@ -270,7 +275,8 @@ public class DatabaseQueries {
         String sql = "from Product as u where u.category_id=:id";
         Query query = session.createQuery(sql);
         query.setParameter("id", id);
-        List<Product> list = query.list();
+        @SuppressWarnings("unchecked")
+        java.util.List<Product> list = query.list();
         if (list.size() > 0 ){
             session.close();
             return false;
@@ -338,7 +344,8 @@ public class DatabaseQueries {
         String sql = "from Category as u where u.label=:label";
         Query query = session.createQuery(sql);
         query.setParameter("label", newLabel);
-        List<Category> list = query.list();
+        @SuppressWarnings("unchecked")
+        java.util.List<Category> list = query.list();
 
         if(list.size() >0)
         {

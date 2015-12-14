@@ -4,9 +4,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import de.hska.vis.webshop.model.User;
-import org.slf4j.Logger;
 
 /**
  * Created by Christian on 26.11.2015.

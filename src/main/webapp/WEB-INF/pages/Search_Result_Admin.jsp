@@ -33,7 +33,7 @@
                                 <s:param name="id" value="product_id"/>
                             </s:url>"><s:property value="label"/></a>
                         </td>
-                        <p>Preis: <td><s:property value="price"/></td></p>
+                        <td><p>Preis: <s:property value="price"/> Btc.</p></td>
                     </tr>
                 </s:iterator>
                 <p/>

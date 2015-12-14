@@ -2,15 +2,8 @@ package de.hska.vis.webshop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import de.hska.vis.webshop.helper.DatabaseQueries;
-import de.hska.vis.webshop.helper.HibernateUtil;
-import de.hska.vis.webshop.model.Category;
 import de.hska.vis.webshop.model.Product;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.Query;
 
-import java.util.List;
 /**
  * Created by Marcel on 30.11.2015.
  * This class is used as action to add a product to the database.
