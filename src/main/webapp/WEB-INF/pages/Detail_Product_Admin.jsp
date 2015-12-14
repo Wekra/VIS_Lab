@@ -34,13 +34,26 @@
                 <p>Preis: <s:property value="productBean.price"/> Btc.</p>
                 <p>Noch <s:property value="productBean.stock"/> auf Lager.</p>
                 <p/>
-                <p/>
-                <p>Zurück <a href="<s:url action="GoTo_Menu"/>">zum Hauptmenü</a>. </p>
+                <p>
+                    <a href="
+                            <s:url action="Delete_Product">
+                                <s:param name="specialId" value="productBean.product_id"/>
+                        </s:url>">Löschen
+                    </a>
+                </p>
+                <p>
+                    <a href="
+                        <s:url action="GoTo_Edit_Product">
+                            <s:param name="specialId" value="productBean.product_id"/>
+                    </s:url>">Editieren
+                    </a>
+                </p>
+                <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
             </div>
-            <div class="contact">
-                <hr />
-                <s:text name="contact" />
-            </div>
+        </div>
+        <div class="contact">
+            <hr />
+            <s:text name="contact" />
         </div>
     </body>
 </html>

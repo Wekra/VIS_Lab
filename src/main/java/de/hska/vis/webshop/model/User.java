@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 /**
  * Created by Christian on 26.11.2015.
+ * This class represents the user table of the webshop database.
  */
 @Entity
 @SequenceGenerator(name="U_ID", initialValue = 1, allocationSize = 1)

@@ -51,5 +51,5 @@
             <hr />
             <s:text name="contact" />
         </div>
-</body>
+    </body>
 </html>

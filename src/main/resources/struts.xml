@@ -61,12 +61,16 @@
         </action>
 
         <action name="GoTo_Admin_Main" class="de.hska.vis.webshop.action.GoTo_Admin_Main">
-            <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
+            <result name="success">/WEB-INF/pages/Menu_Admin.jsp</result>
         </action>
 
 
         <action name="GoTo_Detail_Product" class="de.hska.vis.webshop.action.GoTo_Detail_Product">
             <result name="success">/WEB-INF/pages/Detail_Product.jsp</result>
+        </action>
+
+        <action name="GoTo_Detail_Product_Admin" class="de.hska.vis.webshop.action.GoTo_Detail_Product">
+            <result name="success">/WEB-INF/pages/Detail_Product_Admin.jsp</result>
         </action>
 
         <action name="GoTo_Add_Category" class="de.hska.vis.webshop.action.GoTo_Add_Category">
@@ -84,8 +88,16 @@
             <result name="success">/WEB-INF/pages/Search.jsp</result>
         </action>
 
+        <action name="GoTo_Search_Admin" class="de.hska.vis.webshop.action.GoTo_Search">
+            <result name="success">/WEB-INF/pages/Search_Admin.jsp</result>
+        </action>
+
         <action name="Search_Result" class="de.hska.vis.webshop.action.Search_Result">
             <result name="success">/WEB-INF/pages/Search_Result.jsp</result>
+        </action>
+
+        <action name="Search_Result_Admin" class="de.hska.vis.webshop.action.Search_Result">
+            <result name="success">/WEB-INF/pages/Search_Result_Admin.jsp</result>
         </action>
 
         <action name="Logout" class="de.hska.vis.webshop.action.Logout">
@@ -145,6 +157,10 @@
             <result name="input" type="redirectAction">
                 <param name="actionName">GoTo_Admin_Main</param>
             </result>
+        </action>
+
+        <action name="GoTo_Menu" class="de.hska.vis.webshop.action.GoTo_User_Main">
+            <result name="success">/WEB-INF/pages/Menu.jsp</result>
         </action>
 
     </package>

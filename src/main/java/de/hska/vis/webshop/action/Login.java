@@ -22,15 +22,19 @@
 package de.hska.vis.webshop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import de.hska.vis.webshop.helper.HibernateUtil;
+import de.hska.vis.webshop.helper.DatabaseQueries;
 import de.hska.vis.webshop.model.Product;
 import de.hska.vis.webshop.model.User;
-import org.hibernate.Query;
-import org.hibernate.Session;
 
 import java.util.List;
 
 public class Login extends ActionSupport {
+    private final DatabaseQueries database;
+
+    public Login(){
+        super();
+        database = new DatabaseQueries();
+    }
 
     public void setProductList(List<Product> productList) {
         this.productList = productList;
@@ -44,25 +48,25 @@ public class Login extends ActionSupport {
 
     public String execute() throws Exception {
 
-        User user = null;
-        user = getUserByEmail(getEmail());
+        User user;
+        user = database.getUserByEmail(getEmail());
         if (user == null) return INPUT;
 
         if(!isPasswordValid(user)) return INPUT;
 
         if(user.isAdmin()){
-            productList = createProductList();
+            productList = database.createProductList();
             return "admin";
         }
 
-        productList = createProductList();
+        productList = database.createProductList();
 
         return SUCCESS;
     }
 
-   private boolean isInvalid(String value) {
+   /*private boolean isInvalid(String value) {
         return (value == null || value.length() == 0);
-    }
+    }*/
 
     private String email;
 
@@ -88,22 +92,6 @@ public class Login extends ActionSupport {
        return user.getPassword().equals(getPassword());
     }
 
-    private User getUserByEmail(String email){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-
-        session.beginTransaction();
-        String sql = "from User as u where u.email=:mail";
-        Query query = session.createQuery(sql);
-        query.setParameter("mail", email);
-        List<User> list = query.list();
-        if (list.size() > 0 ){
-            session.close();
-            return list.get(0);
-        }
-        session.close();
-        return null;
-    }
-
     public void validate(){
         if(getEmail().length() == 0){
             addFieldError("email", "This field must not be empty!");
@@ -113,22 +101,4 @@ public class Login extends ActionSupport {
             addFieldError("password", "This field must not be empty!");
         }
     }
-
-    private java.util.List<Product> createProductList() {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-
-        session.beginTransaction();
-        String sql = "from Product";
-        Query query = session.createQuery(sql);
-        java.util.List<Product> list = query.list();
-        if (list.size() > 0) {
-            session.close();
-            return list;
-        }
-        session.close();
-        return null;
-    }
-
-
-
 }

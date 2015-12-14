@@ -37,7 +37,7 @@
                     </tr>
                 </s:iterator>
                 <p/>
-                <p>Zurück <a href="<s:url action="GoTo_Menu"/>">zum Hauptmenü</a>. </p>
+                <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
             </div>
         </div>
         <div class="contact">

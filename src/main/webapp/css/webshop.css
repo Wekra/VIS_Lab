@@ -24,8 +24,7 @@ h3{
 
 .container {
     position: relative;
-    top: 100px;
-    left: 100px;
+    top: 50px;
 }
 
 .contact {
@@ -46,11 +45,6 @@ h3{
     font-weight: bold;
 }
 
-.searchParagraph{
-    color: black;
-    font-size: 16px;
-}
-
 .nav a {
     position: relative;
     top: 0px;
@@ -67,30 +61,7 @@ h3{
     display: inline;
 }
 
-label[for="labelFirstname"] {
-    color: black;
-}
-label[for="labelLastname"] {
-    color: black;
-}
-label[for="labelEmail"] {
-    color: black;
-}
-label[for="labelStreet"] {
-    color: black;
-}
-label[for="labelNumber"] {
-    color: black;
-}
-label[for="labelZip"] {
-    color: black;
-}
-label[for="labelCity"] {
-    color: black;
-}
-label[for="labelCountry"] {
-    color: black;
-}
-label[for="labelPassword"] {
-    color: black;
+.content-container{
+    position:relative;
+    left:100px;
 }

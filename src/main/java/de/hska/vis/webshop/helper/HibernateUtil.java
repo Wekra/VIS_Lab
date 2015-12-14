@@ -10,21 +10,14 @@ import org.slf4j.Logger;
 
 /**
  * Created by Christian on 26.11.2015.
+ * This class is used to create and access the SessionFactory object.
  */
 public class HibernateUtil {
+
     private static SessionFactory sessionFactory;
 
     static{
-        /*try{
-            /*sessionFactory = /*new Configuration()
-                    .addPackage("de.hska.vis.webshop.model")
-                    .addAnnotatedClass(User.class)
-                    .configure()
-                    .buildSessionFactory();
-            sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
-        } catch (RuntimeException ex) {
-            System.out.println(ex.getMessage());
-        }*/
+
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
                 .build();
@@ -36,19 +29,12 @@ public class HibernateUtil {
             // so destroy it manually.
             StandardServiceRegistryBuilder.destroy(registry);
         }
-        /*try {
-            // Create the SessionFactory from hibernate.cfg.xml
-            Configuration configuration = new Configuration().configure();
-            StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().
-                    applySettings(configuration.getProperties());
-            sessionFactory = configuration.buildSessionFactory(builder.build());
-            System.out.println("Initial SessionFactory creation");
-        } catch (Throwable ex) {
-            System.out.println("Initial SessionFactory creation failed." + ex);
-            throw new ExceptionInInitializerError(ex);
-        }*/
     }
 
+    /**
+     * Get the SessionFactory object
+     * @return the SessionFactory
+     */
     public static SessionFactory getSessionFactory(){
         return sessionFactory;
     }

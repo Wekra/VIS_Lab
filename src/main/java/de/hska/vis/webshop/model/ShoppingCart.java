@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 /**
  * Created by Christian on 30.11.2015.
+ * This class represents the shopping-cart table of the webshop database.
  */
 @Entity
 @Table(name = "shopping_cart", schema = "vislab")
