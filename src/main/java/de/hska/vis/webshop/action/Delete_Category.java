@@ -3,6 +3,7 @@ package de.hska.vis.webshop.action;
 import com.opensymphony.xwork2.ActionSupport;
 import de.hska.vis.webshop.helper.HibernateUtil;
 import de.hska.vis.webshop.model.Category;
+import de.hska.vis.webshop.model.Product;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,9 +12,19 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 /**
- * Created by Marcel on 07.12.2015.
+ * Created by Marcel on 10.12.2015.
  */
-public class Add_Category extends ActionSupport {
+public class Delete_Category extends ActionSupport {
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    private long id;
 
     public Category getCategoryBean() {
         return categoryBean;
@@ -24,23 +35,23 @@ public class Add_Category extends ActionSupport {
     }
 
     private Category categoryBean;
-    @Override
-    public String execute() {
 
-        //returns input if the category exists already
-        Category category = null;
-        category = getCategoryByLabel(categoryBean.getLabel());
-        if (!(category == null)) return INPUT;
+    public String execute()
+    {
 
+        if(!allowedToDeleteCategory(categoryBean.getCategory_id()))
+        {
+            return INPUT;
+        }
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = null;
         Transaction transaction = null;
 
-        //saves the category in database
         try {
             session = sf.getCurrentSession();
             transaction = session.beginTransaction();
-            session.save(categoryBean);
+            categoryBean = (Category) session.get(Category.class,this.id);
+            session.delete(categoryBean);
             transaction.commit();
 
             return SUCCESS;
@@ -51,25 +62,22 @@ public class Add_Category extends ActionSupport {
         }
     }
 
-    /**
-     * Gives the category with the choosen label
-     * @param label String categoryname
-     * @return null if category doesn't exist or the category
-     */
-    private Category getCategoryByLabel(String label)
+
+    private Boolean allowedToDeleteCategory(long id)
     {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
         session.beginTransaction();
-        String sql = "from Category as u where u.label=:label";
+
+        String sql = "from Product as u where u.category_id=:id";
         Query query = session.createQuery(sql);
-        query.setParameter("label", label);
-        List<Category> list = query.list();
+        query.setParameter("id", id);
+        List<Product> list = query.list();
         if (list.size() > 0 ){
             session.close();
-            return list.get(0);
+            return false;
         }
         session.close();
-        return null;
+        return true;
     }
 }

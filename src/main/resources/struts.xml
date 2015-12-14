@@ -23,11 +23,15 @@
         </action>
 
         <action name="Access_menu" method="execute" class="de.hska.vis.webshop.action.GoTo_User_Main">
-            <result name="success">/WEB-INF/pages/Admin_Menu.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
         </action>
 
         <action name="LoginSubmit" method="execute" class="de.hska.vis.webshop.action.Login">
-            <result name="admin">/WEB-INF/pages/Admin_Menu.jsp</result>
+            <result name="admin" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
             <result name="success">/WEB-INF/pages/Menu.jsp</result>
             <result name="input">/WEB-INF/pages/Login.jsp</result>
         </action>
@@ -44,12 +48,16 @@
 
         <action name="GoTo_Add_Product" class="de.hska.vis.webshop.action.GoTo_Add_Product">
             <result name="success">/WEB-INF/pages/Add_Product.jsp</result>
-            <result name="input">/WEB-INF/pages/Add_Category.jsp</result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
         </action>
 
         <action name="Add_Product" class="de.hska.vis.webshop.action.Add_Product" method="execute">
             <result name="success">/WEB-INF/pages/Add_Product_Successfull.jsp</result>
-            <result name="input">/WEB-INF/pages/Add_Product.jsp</result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Add_Product</param>
+            </result>
         </action>
 
         <action name="GoTo_Admin_Main" class="de.hska.vis.webshop.action.GoTo_Admin_Main">
@@ -67,7 +75,9 @@
 
         <action name="Add_Category" class="de.hska.vis.webshop.action.Add_Category">
             <result name="success">/WEB-INF/pages/Add_Category_Successfull.jsp</result>
-            <result name="input">/WEB-INF/pages/Add_Category.jsp</result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Add_Category</param>
+            </result>
         </action>
 
         <action name="GoTo_Search" class="de.hska.vis.webshop.action.GoTo_Search">
@@ -80,6 +90,61 @@
 
         <action name="Logout" class="de.hska.vis.webshop.action.Logout">
             <result name="success">/WEB-INF/pages/Homepage.jsp</result>
+        </action>
+
+        <action name="Delete_Product" class="de.hska.vis.webshop.action.Delete_Product">
+            <result name="success">/WEB-INF/pages/Delete_Success.jsp</result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+        </action>
+
+        <action name="GoTo_Edit_Product" class="de.hska.vis.webshop.action.GoTo_Edit_Product">
+            <result name="success">/WEB-INF/pages/Edit_Product.jsp</result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+        </action>
+
+        <action name="Edit_Product" class="de.hska.vis.webshop.action.Edit_Product">
+            <result name="success" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+        </action>
+
+        <action name="GoTo_Category_View" class="de.hska.vis.webshop.action.GoTo_Category_View">
+            <result name="success">/WEB-INF/pages/Category_View.jsp</result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+        </action>
+
+        <action name="GoTo_Edit_Category" class="de.hska.vis.webshop.action.GoTo_Edit_Category">
+            <result name="success">/WEB-INF/pages/Edit_Category.jsp</result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+        </action>
+
+        <action name="Edit_Category" class="de.hska.vis.webshop.action.Edit_Category">
+            <result name="success" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+        </action>
+
+        <action name="Delete_Category" class="de.hska.vis.webshop.action.Delete_Category">
+            <result name="success" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">GoTo_Admin_Main</param>
+            </result>
         </action>
 
     </package>

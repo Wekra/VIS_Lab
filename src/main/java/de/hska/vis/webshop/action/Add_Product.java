@@ -15,14 +15,14 @@ import java.util.List;
  */
 public class Add_Product extends ActionSupport {
 
-    private List<Category> helperList;
+    //private List<Category> helperList;
 
     public Product getProductBean(){return this.productBean;}
 
     public void setProductBean(Product productBean) {this.productBean = productBean;}
 
     private Product productBean;
-
+/*
     public String[] getCategoryLabelList() {
         return categoryLabelList;
     }
@@ -32,6 +32,16 @@ public class Add_Product extends ActionSupport {
     }
 
     private String[] categoryLabelList;
+*/
+    public String getCategory_label() {
+        return category_label;
+    }
+
+    public void setCategory_label(String category_label) {
+        this.category_label = category_label;
+    }
+
+    private String category_label;
 
     public String execute()
     {
@@ -39,6 +49,7 @@ public class Add_Product extends ActionSupport {
         Product product = null;
         product = getProductByLabel(productBean.getLabel());
         if (!(product == null)){
+            /*
             helperList = createCategoryList();
 
             //create String Array with the labels of the categorys
@@ -47,8 +58,11 @@ public class Add_Product extends ActionSupport {
             {
                 categoryLabelList[i] = helperList.get(i).getLabel();
             }
+            */
             return INPUT;
         }
+        //Set Product.category_id to the Category_id
+        productBean.setCategory_id(getCategory_idFromLabel(category_label));
 
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = null;
@@ -67,6 +81,24 @@ public class Add_Product extends ActionSupport {
             System.out.println(e.getMessage());
             return INPUT;
         }
+    }
+
+    /**
+     * gets the category_id from the category label
+     * @param label String the category label
+     * @return long the category_id
+     */
+    private long getCategory_idFromLabel(String label)
+    {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        session.beginTransaction();
+        String sql = "from Category as u where u.label=:label";
+        Query query = session.createQuery(sql);
+        query.setParameter("label", label);
+        List<Category> list = query.list();
+
+        return list.get(0).getCategory_id();
     }
 
     /**
@@ -95,6 +127,7 @@ public class Add_Product extends ActionSupport {
      * creates a list with all categorys in it
      * @return null if the list is empty or the list
      */
+    /*
     private List<Category> createCategoryList()
     {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -110,7 +143,7 @@ public class Add_Product extends ActionSupport {
         session.close();
         return null;
     }
-
+*/
   /*  public void validate(){
         Product product = null;
         product = getProductByLabel(productBean.getLabel());

@@ -10,19 +10,19 @@ import javax.persistence.Id;
  */
 @Entity
 public class Category {
-    private long category_id;
-    private String label;
-    private String description;
-
-    @Id
-    @Column(name = "C_ID")
-    public long getcCategory_id() {
+    public long getCategory_id() {
         return category_id;
     }
 
-    public void setcCategory_id(long cId) {
-        this.category_id = cId;
+    public void setCategory_id(long category_id) {
+        this.category_id = category_id;
     }
+
+    @Id
+    @Column(name = "category_id")
+    private long category_id;
+    private String label;
+    private String description;
 
     @Basic
     @Column(name = "LABEL")
