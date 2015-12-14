@@ -24,7 +24,7 @@
                 <h3>Sie haben Folgendes bei Ihrer Registration angegeben</h3>
                 <p><s:property value="userBean" /> </p>
 
-                <p>Um zum Hauptmenü zu gelangen, klicken Sie bitte <a href="<s:url action="GoTo_Menu"/>">hier</a>. </p>
+                <p>Um zum HauptmenÃ¼ zu gelangen, klicken Sie bitte <a href="<s:url action="GoTo_Menu"/>">hier</a>. </p>
             </div>
         </div>
         <div class="contact">
