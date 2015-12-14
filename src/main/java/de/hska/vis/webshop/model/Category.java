@@ -18,11 +18,11 @@ public class Category {
 
     @Id
     @Column(name = "C_ID")
-    public long getcCategory_id() {
+    public long getCategory_id() {
         return category_id;
     }
 
-    public void setcCategory_id(long cId) {
+    public void setCategory_id(long cId) {
         this.category_id = cId;
     }
 
