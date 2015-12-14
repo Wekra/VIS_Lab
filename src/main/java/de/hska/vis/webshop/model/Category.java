@@ -22,7 +22,9 @@ public class Category {
     @Id
     @Column(name = "category_id")
     private long category_id;
+
     private String label;
+
     private String description;
 
     @Basic

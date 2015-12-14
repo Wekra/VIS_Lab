@@ -1,6 +1,7 @@
 package de.hska.vis.webshop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import de.hska.vis.webshop.helper.DatabaseQueries;
 import de.hska.vis.webshop.helper.HibernateUtil;
 import de.hska.vis.webshop.model.Category;
 import de.hska.vis.webshop.model.Product;
@@ -13,8 +14,16 @@ import java.util.List;
 
 /**
  * Created by Marcel on 10.12.2015.
+ * This class is used as action to go to the edit-product page.
  */
 public class GoTo_Edit_Product extends ActionSupport {
+
+    private final DatabaseQueries database;
+
+    public GoTo_Edit_Product(){
+        super();
+        database = new DatabaseQueries();
+    }
 
     public long getSpecialId() {
         return specialId;
@@ -25,7 +34,6 @@ public class GoTo_Edit_Product extends ActionSupport {
     }
 
     private long specialId;
-
 
     public Product getOldProductBean() {
         return oldProductBean;
@@ -57,71 +65,28 @@ public class GoTo_Edit_Product extends ActionSupport {
 
     private String oldCategoryLabel;
 
-    public String execute()
-    {
+    public String execute() {
         List<Category> helperList;
 
-        helperList = createCategoryList();
-        if(helperList == null)
-        {
+        helperList = database.createCategoryList();
+        if (helperList == null) {
             return INPUT;
         }
 
         //create String Array with the labels of the categorys
         categoryLabelList = new String[helperList.size()];
-        for(int i = 0; helperList.size() > i; i++)
-        {
+        for (int i = 0; helperList.size() > i; i++) {
             categoryLabelList[i] = helperList.get(i).getLabel();
         }
 
-        SessionFactory sf = HibernateUtil.getSessionFactory();
-        Session session = null;
-        Transaction transaction = null;
+        oldProductBean = database.getOldProduct(this.specialId);
 
-        try {
-            session = sf.getCurrentSession();
-            transaction = session.beginTransaction();
-            oldProductBean = (Product)session.get(Product.class,this.specialId);
-            transaction.commit();
-
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+        if(oldProductBean == null){
             return INPUT;
         }
-        oldCategoryLabel = getCategory_labelFromId(oldProductBean.getCategory_id());
+
+        oldCategoryLabel = database.getCategory_labelFromId(oldProductBean.getCategory_id());
 
         return SUCCESS;
-    }
-
-    private List<Category> createCategoryList()
-    {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-
-        session.beginTransaction();
-        String sql = "from Category ";
-        Query query = session.createQuery(sql);
-        List<Category> list = query.list();
-        if (list.size() > 0) {
-            session.close();
-            return list;
-        }
-        session.close();
-        return null;
-    }
-
-    /**
-     * Gets the category_label with category_id
-     * @param category_id long
-     * @return String category_label
-     */
-    private String getCategory_labelFromId(long category_id)
-    {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
-
-        Category category =(Category)session.get(Category.class, category_id);
-
-        session.close();
-        return category.getLabel();
     }
 }

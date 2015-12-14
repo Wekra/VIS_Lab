@@ -49,26 +49,4 @@ public class Add_Category extends ActionSupport {
             return INPUT;
         }
     }
-
-    /**
-     * Gives the category with the choosen label
-     * @param label String categoryname
-     * @return null if category doesn't exist or the category
-     */
-    private Category getCategoryByLabel(String label)
-    {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-
-        session.beginTransaction();
-        String sql = "from Category as u where u.label=:label";
-        Query query = session.createQuery(sql);
-        query.setParameter("label", label);
-        List<Category> list = query.list();
-        if (list.size() > 0 ){
-            session.close();
-            return list.get(0);
-        }
-        session.close();
-        return null;
-    }
 }

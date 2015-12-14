@@ -17,12 +17,11 @@
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     </head>
     <body>
-
         <div class="container">
             <div class="header">
                 <div class="nav">
                     <ul class="pull-left">
-                        <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
+                        <li><a href="<s:url action="GoTo_Search_Admin"/>">Suche</a></li>
                         <li><a href="<s:url action="Logout"/>">Logout</a> </li>
                     </ul>
                 </div>
@@ -32,6 +31,7 @@
 
                 <p>Neues Produkt <a href="<s:url action="GoTo_Add_Product"/>">hinzufügen</a>. </p>
                 <p>Neue Kategorie <a href="<s:url action="GoTo_Add_Category"/>">hinzufügen</a>. </p>
+                <p>Kategorien <a href="<s:url action="GoTo_Category_View"/>">bearbeiten</a>. </p>
 
                 <p/>
                 <h2>Produktübersicht</h2>
@@ -39,7 +39,7 @@
                 <s:iterator value="productList">
                     <tr>
                         <td><a href="
-                        <s:url action="GoTo_Detail_Product">
+                        <s:url action="GoTo_Detail_Product_Admin">
                             <s:param name="id" value="product_id"/>
                         </s:url>"><s:property value="label"/></a>
                         </td>
@@ -52,6 +52,5 @@
                 <s:text name="contact" />
             </div>
         </div>
-
-</body>
+    </body>
 </html>

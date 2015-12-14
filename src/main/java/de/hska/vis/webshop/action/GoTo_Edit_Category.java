@@ -1,6 +1,7 @@
 package de.hska.vis.webshop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import de.hska.vis.webshop.helper.DatabaseQueries;
 import de.hska.vis.webshop.helper.HibernateUtil;
 import de.hska.vis.webshop.model.Category;
 import org.hibernate.Query;
@@ -12,8 +13,16 @@ import java.util.List;
 
 /**
  * Created by Marcel on 10.12.2015.
+ * This class is used as action to redirect to the edit-category page.
  */
 public class GoTo_Edit_Category extends ActionSupport {
+
+    private final DatabaseQueries database;
+
+    public GoTo_Edit_Category(){
+        super();
+        database = new DatabaseQueries();
+    }
 
     public long getSpecialId() {
         return specialId;
@@ -38,20 +47,12 @@ public class GoTo_Edit_Category extends ActionSupport {
 
     public String execute()
     {
-        SessionFactory sf = HibernateUtil.getSessionFactory();
-        Session session = null;
-        Transaction transaction = null;
+        oldCategoryBean = database.getOldCategory(this.specialId);
 
-        try {
-            session = sf.getCurrentSession();
-            transaction = session.beginTransaction();
-            oldCategoryBean = (Category) session.get(Category.class,this.specialId);
-            transaction.commit();
-
+        if(oldCategoryBean != null){
             return SUCCESS;
 
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+        } else {
             return INPUT;
         }
     }

@@ -30,10 +30,24 @@
                 <p/>
                 <h3>Beschreibung</h3>
                 <p><s:property value="productBean.description"/></p>
-                <p><s:property value="productBean.label"/> ist der Kategorie <s:property value="productBean.category"/> zugeordnet.</p>
+                <p><s:property value="productBean.label"/> ist der Kategorie "<s:property value="categoryLabel"/>" zugeordnet.</p>
                 <p>Preis: <s:property value="productBean.price"/> Btc.</p>
                 <p>Noch <s:property value="productBean.stock"/> auf Lager.</p>
                 <p/>
+                <p>
+                    <a href="
+                            <s:url action="Delete_Product">
+                                <s:param name="specialId" value="productBean.product_id"/>
+                        </s:url>">Löschen
+                    </a>
+                </p>
+                <p>
+                    <a href="
+                        <s:url action="GoTo_Edit_Product">
+                            <s:param name="specialId" value="productBean.product_id"/>
+                    </s:url>">Editieren
+                    </a>
+                </p>
                 <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
             </div>
         </div>

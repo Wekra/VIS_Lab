@@ -25,7 +25,7 @@
             </div>
             <div class="content-container">
                 <h1>Suche</h1>
-                <s:form action="Search_Result">
+                <s:form action="Search_Result_Admin">
                     <!--s:text name="searchString"/-->
                     <s:textfield key="search" name="searchText"/>
                     <!--s:text name="priceRange"/-->

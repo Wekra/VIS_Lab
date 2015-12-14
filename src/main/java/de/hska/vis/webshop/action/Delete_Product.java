@@ -1,16 +1,21 @@
 package de.hska.vis.webshop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import de.hska.vis.webshop.helper.HibernateUtil;
+import de.hska.vis.webshop.helper.DatabaseQueries;
 import de.hska.vis.webshop.model.Product;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 /**
  * Created by Marcel on 09.12.2015.
+ * This class is used as action to delete a product.
  */
 public class Delete_Product extends ActionSupport {
+
+    private final DatabaseQueries database;
+
+    public Delete_Product(){
+        super();
+        database = new DatabaseQueries();
+    }
 
     public long getSpecialId() {
         return specialId;
@@ -34,21 +39,10 @@ public class Delete_Product extends ActionSupport {
 
     public String execute()
     {
-        SessionFactory sf = HibernateUtil.getSessionFactory();
-        Session session = null;
-        Transaction transaction = null;
 
-        try {
-            session = sf.getCurrentSession();
-            transaction = session.beginTransaction();
-            product = (Product)session.get(Product.class,this.specialId);
-            session.delete(product);
-            transaction.commit();
-
+        if(database.deleteProduct(this.specialId)){
             return SUCCESS;
-
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+        }else{
             return INPUT;
         }
     }
