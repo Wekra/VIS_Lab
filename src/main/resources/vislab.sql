@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`U_ID`, `PASSWORD`, `FIRSTNAME`, `LASTNAME`, `ISADMIN`, `EMAIL`, `STREET`, `NUMBER`, `ZIP`, `CITY`, `COUNTRY`) VALUES
 (1, 'admin', 'Max', 'Musteradmin', 1, 'admin', 'Musterweg', '88', '76137', 'Karlsruhe', 'Deutschland'),
-(2, 'user' 'Max', 'Museruser', 0, 'user', 'Musterweg', '66', '76137', 'Karlsruhe', 'Deutschland');
+(2, 'user', 'Max', 'Museruser', 0, 'user', 'Musterweg', '66', '76137', 'Karlsruhe', 'Deutschland');
 
 --
 -- Indizes der exportierten Tabellen
