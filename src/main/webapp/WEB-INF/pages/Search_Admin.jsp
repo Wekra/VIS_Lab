@@ -19,6 +19,7 @@
             <div class="header">
                 <div class="nav">
                     <ul class="pull-left">
+                        <li> </li>
                         <li><a href="<s:url action="Logout"/>">Logout</a> </li>
                     </ul>
                 </div>

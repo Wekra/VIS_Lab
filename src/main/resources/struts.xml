@@ -55,7 +55,8 @@
 
         <action name="Add_Product" class="de.hska.vis.webshop.action.Add_Product" method="execute">
             <result name="success">/WEB-INF/pages/Add_Product_Successfull.jsp</result>
-            <result name="input" type="redirectAction">
+            <result name="input">/WEB-INF/pages/Add_Product.jsp</result>
+            <result name="productExists" type="redirectAction">
                 <param name="actionName">GoTo_Add_Product</param>
             </result>
         </action>

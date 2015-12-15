@@ -18,7 +18,7 @@
             <div class="header">
                 <div class="nav">
                     <ul class="pull-left">
-                        <li><a href="<s:url action="GoTo_Search"/>">Suche</a></li>
+                        <li><a href="<s:url action="GoTo_Search_Admin"/>">Suche</a></li>
                         <li><a href="<s:url action="Logout"/>">Logout</a> </li>
                     </ul>
                 </div>

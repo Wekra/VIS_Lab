@@ -2,6 +2,7 @@ package de.hska.vis.webshop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import de.hska.vis.webshop.helper.DatabaseQueries;
+import de.hska.vis.webshop.model.Category;
 import de.hska.vis.webshop.model.Product;
 
 /**
@@ -22,7 +23,7 @@ public class Add_Product extends ActionSupport {
     public void setProductBean(Product productBean) {this.productBean = productBean;}
 
     private Product productBean;
-/*
+
     public String[] getCategoryLabelList() {
         return categoryLabelList;
     }
@@ -32,7 +33,7 @@ public class Add_Product extends ActionSupport {
     }
 
     private String[] categoryLabelList;
-*/
+
     public String getCategory_label() {
         return category_label;
     }
@@ -49,7 +50,7 @@ public class Add_Product extends ActionSupport {
         Product product;
         product = database.getProductByLabel(productBean.getLabel());
         if (!(product == null)){
-            return INPUT;
+            return "productExists";
         }
         //Set Product.category_id to the Category_id
         productBean.setCategory_id(database.getCategory_idFromLabel(category_label));
@@ -63,19 +64,28 @@ public class Add_Product extends ActionSupport {
         }
     }
 
-  /*  public void validate(){
-        Product product = null;
-        product = getProductByLabel(productBean.getLabel());
-        if(product != null){
-            addFieldError("productBean.label", "Dieses Produkt existiert bereits.");
-            helperList = createCategoryList();
-
-            //create String Array with the labels of the categories
-            categoryLabelList = new String[helperList.size()];
-            for(int i = 0; helperList.size() > i; i++) {
-                categoryLabelList[i] = helperList.get(i).getLabel();
-            }
+    @Override
+    public void validate(){
+        if(productBean.getLabel().isEmpty() || productBean.getLabel().trim().isEmpty()){
+            addFieldError("productBean.label", "Dieses Feld darf nicht leer sein.");
         }
 
-    }*/
+        if(productBean.getDescription().isEmpty() || productBean.getDescription().trim().isEmpty()){
+            addFieldError("productBean.description", "Dieses Feld darf nicht leer sein.");
+
+        }
+
+        Product product = null;
+        product = database.getProductByLabel(productBean.getLabel());
+        if(product != null) {
+            addFieldError("productBean.label", "Dieses Produkt existiert bereits.");
+        }
+            java.util.List<Category> helperList = database.createCategoryList();
+
+        //create String Array with the labels of the categories
+        categoryLabelList = new String[helperList.size()];
+        for(int i = 0; helperList.size() > i; i++) {
+            categoryLabelList[i] = helperList.get(i).getLabel();
+        }
+    }
 }
