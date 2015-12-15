@@ -93,12 +93,12 @@ public class Login extends ActionSupport {
     }
 
     public void validate(){
-        if(getEmail().length() == 0){
-            addFieldError("email", "This field must not be empty!");
+        if(getEmail().trim().isEmpty()){
+            addFieldError("email", "Dieses Feld darf nicht leer bleiben!");
         }
 
-        if(getPassword().length() == 0){
-            addFieldError("password", "This field must not be empty!");
+        if(getPassword().trim().isEmpty()){
+            addFieldError("password", "Dieses Feld darf nicht leer bleiben!");
         }
     }
 }

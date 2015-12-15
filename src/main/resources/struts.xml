@@ -160,6 +160,7 @@
             <result name="input" type="redirectAction">
                 <param name="actionName">GoTo_Admin_Main</param>
             </result>
+            <result name="error">/WEB-INF/pages/Category_View.jsp</result>
         </action>
 
         <action name="GoTo_Menu" class="de.hska.vis.webshop.action.GoTo_User_Main">

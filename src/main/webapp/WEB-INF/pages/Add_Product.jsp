@@ -45,6 +45,8 @@
             <hr />
             <s:text name="contact" />
         </div>
-
+        <font color="red">
+            <s:actionerror />
+        </font>
     </body>
 </html>

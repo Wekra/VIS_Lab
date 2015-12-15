@@ -13,6 +13,7 @@
         <title>The MILKROAD - Übersicht Kategorien</title>
         <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+        <s:head/>
     </head>
     <body>
         <div class="container">
@@ -60,6 +61,7 @@
                     </table>
                 </s:iterator>
                 </p>
+                <p/>
                 <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>
             </div>
         </div>
@@ -67,5 +69,8 @@
             <hr />
             <s:text name="contact" />
         </div>
+        <font color="red">
+            <s:actionerror />
+        </font>
     </body>
 </html>
