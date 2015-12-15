@@ -80,7 +80,8 @@
 
         <action name="Add_Category" class="de.hska.vis.webshop.action.Add_Category">
             <result name="success">/WEB-INF/pages/Add_Category_Successfull.jsp</result>
-            <result name="input" type="redirectAction">
+            <result name="input">/WEB-INF/pages/Add_Category.jsp</result>
+            <result name="categoryExists" type="redirectAction">
                 <param name="actionName">GoTo_Add_Category</param>
             </result>
         </action>
@@ -123,7 +124,8 @@
             <result name="success" type="redirectAction">
                 <param name="actionName">GoTo_Admin_Main</param>
             </result>
-            <result name="input" type="redirectAction">
+            <result name="input">/WEB-INF/pages/Edit_Product.jsp</result>
+            <result name="productExists" type="redirectAction">
                 <param name="actionName">GoTo_Admin_Main</param>
             </result>
         </action>

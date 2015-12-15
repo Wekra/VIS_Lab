@@ -15,6 +15,7 @@
         <title>The MILKROAD - Produkt bearbeiten</title>
         <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+        <s:head/>
     </head>
     <body>
         <div class="container">
@@ -35,7 +36,7 @@
                     <s:textfield key="price" name="productBean.price" value="%{oldProductBean.price}"/>
                     <s:textfield key="stock" name="productBean.stock" value="%{oldProductBean.stock}"/>
                     <s:hidden name="productBean.product_id" value="%{oldProductBean.product_id}"/>
-                    <s:submit key="edit"/>
+                    <s:submit key="save"/>
                 </s:form>
                 <p/>
                 <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>

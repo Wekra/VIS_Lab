@@ -40,4 +40,11 @@ public class Edit_Category extends ActionSupport {
             return INPUT;
         }
     }
+
+    @Override
+    public void validate(){
+        if(categoryBean.getLabel().isEmpty() || categoryBean.getLabel().trim().isEmpty()){
+            addFieldError("categoryBean.label", "Dieses Feld darf nicht leer sein.");
+        }
+    }
 }

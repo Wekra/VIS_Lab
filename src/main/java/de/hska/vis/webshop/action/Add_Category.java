@@ -33,14 +33,22 @@ public class Add_Category extends ActionSupport {
         //returns input if the category exists already
         Category category;
         category = database.getCategoryByLabel(categoryBean.getLabel());
-        if (!(category == null)) return INPUT;
+        if (category != null) return "categoryExists";
 
         boolean categoryWasSaved = database.saveCategoryToDatabase(categoryBean);
 
         if(categoryWasSaved){
             return SUCCESS;
         } else {
+            addActionError("Die Kategorie konnte nicht in der Datenbank gespeichert werden.");
             return INPUT;
+        }
+    }
+
+    @Override
+    public void validate(){
+        if(categoryBean.getLabel().isEmpty() || categoryBean.getLabel().trim().isEmpty()){
+            addFieldError("categoryBean.label", "Dieses Feld darf nicht leer sein.");
         }
     }
 }

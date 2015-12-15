@@ -13,6 +13,7 @@
         <title>The MILKROAD - Neue Kategorie</title>
         <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+        <s:head />
     </head>
     <body>
         <div class="container">
@@ -29,7 +30,7 @@
                 <p/>
                 <s:form action="Add_Category">
                     <s:textfield key="categoryname" name="categoryBean.label"/>
-                    <s:submit/>
+                    <s:submit key="addCategoryButton"/>
                 </s:form>
                 <p/>
                 <p>Zurück <a href="<s:url action="GoTo_Admin_Main"/>">zum Hauptmenü</a>. </p>

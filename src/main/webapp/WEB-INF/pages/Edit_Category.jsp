@@ -15,6 +15,7 @@
     <title>The MILKROAD - Kategorien bearbeiten</title>
     <link href="${pageContext.request.contextPath}../../css/webshop.css" rel="stylesheet" type="text/css">
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <s:head/>
 </head>
     <body>
         <div class="container">
@@ -30,7 +31,7 @@
                 <s:form action="Edit_Category" enctype="multipart/form-data">
                     <s:textfield key="category" name="categoryBean.label" value="%{oldCategoryBean.label}"/>
                     <s:hidden name="categoryBean.category_id" value="%{oldCategoryBean.category_id}"/>
-                    <s:submit key="edit"/>
+                    <s:submit key="save"/>
                 </s:form>
                 </p>
                 <p>Zurück <a href="<s:url action="GoTo_Category_View"/>">zur Kategorieübersicht</a>. </p>

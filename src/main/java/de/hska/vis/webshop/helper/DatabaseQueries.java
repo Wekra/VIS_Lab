@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -184,17 +185,23 @@ public class DatabaseQueries {
 
         session.beginTransaction();
         String sql =
-                "from Product p " +
-                        /*", Category c " +*/
+                "select distinct p.product_id from Product p " +
+                        ", Category c " +
                         "where (p.label like :text or p.description like :text " +
-                /*"or(c.label like :text and (p.category_id = c.category_id))" +*/
+                "or(c.label like :text and (p.category_id = c.category_id))" +
                         ") and p.price between :min and :max";
         Query query = session.createQuery(sql);
         query.setParameter("text", "%" + text +"%");
         query.setParameter("min",min);
         query.setParameter("max", max);
         @SuppressWarnings("unchecked")
-        java.util.List<Product> list = query.list();
+        java.util.List<Long> list2 = query.list();
+        java.util.List<Product> list = new ArrayList<Product>();
+        for(int i = 0; list2.size() > i; i++){
+            long j = list2.get(i);
+            list.add((Product)session.get(Product.class, j));
+        }
+
         if (list.size() > 0) {
             session.close();
             return list;
